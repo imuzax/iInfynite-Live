@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
-const secretKey = process.env.SESSION_SECRET;
+const secretKey = process.env.SESSION_SECRET || "default_secret_key_for_iinfynite_startup_agency_secure_32_bytes";
 const encodedKey = new TextEncoder().encode(secretKey);
 
 export async function middleware(request: NextRequest) {
