@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
               name="email"
               type="email"
               required
-              placeholder="admin@iinfynite.com"
+              placeholder="username@example.com"
               className="input-glass"
             />
           </div>
