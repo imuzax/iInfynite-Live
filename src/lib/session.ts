@@ -2,7 +2,7 @@ import "server-only";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
-const secretKey = process.env.SESSION_SECRET;
+const secretKey = process.env.SESSION_SECRET || "default_secret_key_for_iinfynite_startup_agency_secure_32_bytes";
 const encodedKey = new TextEncoder().encode(secretKey);
 
 interface SessionPayload {
