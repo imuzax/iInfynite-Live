@@ -23,8 +23,8 @@ export async function loginAction(
 
     // Auto-setup first admin if DB is empty (e.g. seed script failed)
     if (!user) {
-      const defaultEmail = process.env.ADMIN_EMAIL || "admin@iinfynite.com";
-      const defaultPass = process.env.ADMIN_PASSWORD || "admin123";
+      const defaultEmail = process.env.ADMIN_EMAIL || "muzax@iinfynite.com";
+      const defaultPass = process.env.ADMIN_PASSWORD || "M041105h";
       
       if (email === defaultEmail && password === defaultPass) {
         const hashedPassword = await hash(password, 10);
