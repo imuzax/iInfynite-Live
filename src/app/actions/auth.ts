@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { createSession, deleteSession } from "@/lib/session";
-import { compare } from "bcryptjs";
+import { compare, hash } from "bcryptjs";
 import { redirect } from "next/navigation";
 
 export async function loginAction(
@@ -17,12 +17,23 @@ export async function loginAction(
   }
 
   try {
-    const user = await prisma.adminUser.findUnique({
+    let user = await prisma.adminUser.findUnique({
       where: { email },
     });
 
+    // Auto-setup first admin if DB is empty (e.g. seed script failed)
     if (!user) {
-      return { error: "Invalid credentials" };
+      const defaultEmail = process.env.ADMIN_EMAIL || "admin@iinfynite.com";
+      const defaultPass = process.env.ADMIN_PASSWORD || "admin123";
+      
+      if (email === defaultEmail && password === defaultPass) {
+        const hashedPassword = await hash(password, 10);
+        user = await prisma.adminUser.create({
+          data: { email, password: hashedPassword },
+        });
+      } else {
+        return { error: "Invalid credentials" };
+      }
     }
 
     const passwordMatch = await compare(password, user.password);
