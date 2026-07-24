@@ -10,6 +10,7 @@ interface Project {
   slug: string;
   category: string;
   description: string;
+  fullDescription: string;
   imageUrl: string;
   liveUrl: string | null;
 }
@@ -84,8 +85,12 @@ export default function AdminProjectsPage() {
                 <input name="category" defaultValue={editing?.category} required className="input-glass" placeholder="e.g. Web Development" />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Description</label>
-                <textarea name="description" defaultValue={editing?.description} required className="input-glass" rows={3} />
+                <label className="block text-sm font-medium mb-1">Description (Short)</label>
+                <textarea name="description" defaultValue={editing?.description} required className="input-glass" rows={2} />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Full Description (Detail Page)</label>
+                <textarea name="fullDescription" defaultValue={editing?.fullDescription} required className="input-glass" rows={5} />
               </div>
               <div>
                 <label className="block text-sm font-medium mb-1">Image URL</label>
