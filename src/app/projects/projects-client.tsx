@@ -52,12 +52,12 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
           <FadeIn key={project.slug} delay={index * 0.1}>
             <Link href={`/projects/${project.slug}`}>
               <GlassCard className="group cursor-pointer h-full">
-                <div className="h-48 rounded-xl bg-glass-bg border border-white/5 overflow-hidden mb-5 relative group-hover:border-white/10 transition-colors">
+                <div className="h-48 p-4 rounded-xl bg-glass-bg border border-white/5 overflow-hidden mb-5 relative group-hover:border-white/10 transition-colors flex items-center justify-center">
                   {project.imageUrl && project.imageUrl !== "/placeholder.png" ? (
                     <img 
                       src={project.imageUrl} 
                       alt={project.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
