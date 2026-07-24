@@ -42,6 +42,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { GlobalPreloader } from "@/components/ui/preloader";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,6 +55,7 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable}`}
     >
       <body className="min-h-screen flex flex-col relative">
+        <GlobalPreloader />
         {/* Noise texture overlay for premium feel */}
         <div className="noise-overlay" aria-hidden="true" />
 
