@@ -39,11 +39,6 @@ export const metadata: Metadata = {
     title: "iInfynite — Freelance IT Agency",
     description:
       "Premium IT services: Web Dev, App Dev, Graphic Design, Startup Acceleration, Digital Growth & Custom Software.",
-  },
-};
-
-import { GlobalPreloader } from "@/components/ui/preloader";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,7 +50,6 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable}`}
     >
       <body className="min-h-screen flex flex-col relative">
-        <GlobalPreloader />
         {/* Noise texture overlay for premium feel */}
         <div className="noise-overlay" aria-hidden="true" />
 
