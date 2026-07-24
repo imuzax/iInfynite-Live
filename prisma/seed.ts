@@ -39,8 +39,8 @@ async function main() {
 
   // Seed projects
   const projects = [
-    { title: "E-Commerce Platform", slug: "e-commerce-platform", category: "Web Development", description: "A full-featured online store with payment integration.", imageUrl: "/placeholder.png" },
-    { title: "Fitness Tracking App", slug: "fitness-tracking-app", category: "App Development", description: "Cross-platform fitness app with workout tracking.", imageUrl: "/placeholder.png" },
+    { title: "Velocity Luxe App", slug: "velocity-luxe-app", category: "App Development", description: "Premium e-commerce mobile experience with 3D UI elements.", imageUrl: "/ecommerce-mockup.png" },
+    { title: "Data Analytics Dashboard", slug: "data-analytics-dashboard", category: "Custom Software", description: "Sophisticated IT solutions portfolio analytics and monitoring.", imageUrl: "/dashboard-mockup.png" },
     { title: "Brand Identity Suite", slug: "brand-identity-suite", category: "Graphic Design", description: "Complete brand overhaul including logo and typography.", imageUrl: "/placeholder.png" },
   ];
 
