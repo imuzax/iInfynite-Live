@@ -21,8 +21,10 @@ export async function createTeamMember(formData: FormData) {
     data: {
       name: formData.get("name") as string,
       role: formData.get("role") as string,
+      bio: (formData.get("bio") as string) || null,
       photoUrl: formData.get("photoUrl") as string,
       linkedin: (formData.get("linkedin") as string) || null,
+      isFounder: formData.get("isFounder") === "true",
     },
   });
 
@@ -38,8 +40,10 @@ export async function updateTeamMember(id: string, formData: FormData) {
     data: {
       name: formData.get("name") as string,
       role: formData.get("role") as string,
+      bio: (formData.get("bio") as string) || null,
       photoUrl: formData.get("photoUrl") as string,
       linkedin: (formData.get("linkedin") as string) || null,
+      isFounder: formData.get("isFounder") === "true",
     },
   });
 
