@@ -188,7 +188,12 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Section spacing */
   .section-padding {
-    padding: 6rem 0;
+    padding: 4rem 0;
+  }
+  @media (min-width: 768px) {
+    .section-padding {
+      padding: 6rem 0;
+    }
   }
 
   /* Admin panel specific */
