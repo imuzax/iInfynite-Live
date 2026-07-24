@@ -97,7 +97,7 @@ export default function HomePage() {
       </section>
 
       {/* ====== SMALL TEAMS GRID ====== */}
-      <section className="py-20 md:py-32 relative border-t border-white/5">
+      <section className="py-20 md:py-32 relative border-t border-white/5 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.02] rounded-full blur-[80px] pointer-events-none" />
         
         <div className="container-main">
