@@ -36,7 +36,7 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-accent text-white"
+                  ? "bg-accent text-black"
                   : "bg-glass-bg border border-glass-border text-muted hover:text-foreground hover:border-glass-hover"
               }`}
             >
@@ -52,12 +52,12 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
           <FadeIn key={project.slug} delay={index * 0.1}>
             <Link href={`/projects/${project.slug}`}>
               <GlassCard className="group cursor-pointer h-full">
-                <div className="h-48 p-4 rounded-xl bg-glass-bg border border-white/5 overflow-hidden mb-5 relative group-hover:border-white/10 transition-colors flex items-center justify-center">
+                <div className="h-48 rounded-xl bg-glass-bg border border-white/5 overflow-hidden mb-5 relative group-hover:border-white/10 transition-colors">
                   {project.imageUrl && project.imageUrl !== "/placeholder.png" ? (
                     <img 
                       src={project.imageUrl} 
                       alt={project.title} 
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
