@@ -9,18 +9,10 @@ export function GlobalPreloader() {
 
   useEffect(() => {
     setIsClient(true);
-    // Show preloader only on initial visit for this session
-    const hasVisited = sessionStorage.getItem("hasVisited");
     
-    if (hasVisited) {
-      setIsLoading(false);
-      return;
-    }
-
     // Play animation (draw line for 1.5s, then dot 0.4s, then fade out)
     const timer = setTimeout(() => {
       setIsLoading(false);
-      sessionStorage.setItem("hasVisited", "true");
     }, 2400);
 
     return () => clearTimeout(timer);

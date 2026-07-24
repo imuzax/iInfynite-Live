@@ -19,10 +19,12 @@ import {
 } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { GlobalPreloader } from "@/components/ui/preloader";
 
 export default function HomePage() {
   return (
     <>
+      <GlobalPreloader />
       {/* ====== HERO SECTION ====== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.03] rounded-full blur-[100px] pointer-events-none" />
