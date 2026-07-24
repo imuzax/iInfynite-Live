@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Target, Eye, Heart, ExternalLink, Linkedin } from "lucide-react";
+import { Target, Eye, Heart, ExternalLink } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -126,7 +126,7 @@ export default async function AboutPage() {
                         
                         {founder.linkedin && (
                           <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
-                            <Linkedin size={18} /> Connect on LinkedIn
+                            <ExternalLink size={18} /> Connect on LinkedIn
                           </a>
                         )}
                       </div>
@@ -169,7 +169,7 @@ export default async function AboutPage() {
                     <div className="mt-auto">
                       {member.linkedin ? (
                         <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted hover:text-white transition-colors">
-                          <Linkedin size={16} /> LinkedIn
+                          <ExternalLink size={16} /> LinkedIn
                         </a>
                       ) : (
                         <span className="text-sm text-muted/50 invisible">No LinkedIn</span>
