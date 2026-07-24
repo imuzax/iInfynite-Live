@@ -66,74 +66,75 @@ export default async function ProjectDetailPage(props: PageProps) {
             </div>
           </FadeIn>
 
-          {/* Hero image */}
-          <FadeIn delay={0.2}>
-            <div className="h-64 md:h-[400px] rounded-3xl overflow-hidden mb-16 relative">
-              {project.imageUrl && project.imageUrl !== "/placeholder.png" ? (
-                <img 
-                  src={project.imageUrl} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
-                  <span className="text-8xl font-bold text-foreground/10" style={{ fontFamily: "var(--font-heading)" }}>
-                    {project.title.charAt(0)}
-                  </span>
-                </div>
-              )}
-            </div>
-          </FadeIn>
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Left Column: At a Glance */}
-            <div className="lg:col-span-1 space-y-6">
-              <FadeIn delay={0.3}>
-                <div className="p-8 rounded-2xl bg-[#0a0a0a] border border-white/5 sticky top-32">
-                  <h3 className="text-lg font-semibold mb-6 border-b border-white/10 pb-4">At a Glance</h3>
-                  <div className="space-y-6">
-                    {project.clientName && (
-                      <div>
-                        <div className="text-xs text-muted uppercase tracking-wider mb-1 flex items-center gap-2"><User size={14} /> Client</div>
-                        <div className="font-medium">{project.clientName}</div>
-                      </div>
-                    )}
-                    {project.role && (
-                      <div>
-                        <div className="text-xs text-muted uppercase tracking-wider mb-1 flex items-center gap-2"><Briefcase size={14} /> Role</div>
-                        <div className="font-medium">{project.role}</div>
-                      </div>
-                    )}
-                    {project.timeline && (
-                      <div>
-                        <div className="text-xs text-muted uppercase tracking-wider mb-1 flex items-center gap-2"><Clock size={14} /> Timeline</div>
-                        <div className="font-medium">{project.timeline}</div>
-                      </div>
-                    )}
-                    {project.liveUrl && (
-                      <div>
-                        <div className="text-xs text-muted uppercase tracking-wider mb-2 flex items-center gap-2"><ExternalLink size={14} /> Live Link</div>
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">
-                          Visit Project <ExternalLink size={12} />
-                        </a>
+            {/* Left Column: Sticky Sidebar with Image & Details */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-32 space-y-6">
+                <FadeIn delay={0.2}>
+                  <div className="h-64 rounded-2xl overflow-hidden relative border border-white/5">
+                    {project.imageUrl && project.imageUrl !== "/placeholder.png" ? (
+                      <img 
+                        src={project.imageUrl} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
+                        <span className="text-6xl font-bold text-foreground/10" style={{ fontFamily: "var(--font-heading)" }}>
+                          {project.title.charAt(0)}
+                        </span>
                       </div>
                     )}
                   </div>
+                </FadeIn>
 
-                  {techStackArray.length > 0 && (
-                    <div className="mt-8 pt-8 border-t border-white/10">
-                      <div className="text-xs text-muted uppercase tracking-wider mb-4 flex items-center gap-2"><Code size={14} /> Technologies</div>
-                      <div className="flex flex-wrap gap-2">
-                        {techStackArray.map((tech) => (
-                          <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/80">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                <FadeIn delay={0.3}>
+                  <div className="p-8 rounded-2xl bg-[#0a0a0a] border border-white/5">
+                    <h3 className="text-lg font-semibold mb-6 border-b border-white/10 pb-4">At a Glance</h3>
+                    <div className="space-y-6">
+                      {project.clientName && (
+                        <div>
+                          <div className="text-xs text-muted uppercase tracking-wider mb-1 flex items-center gap-2"><User size={14} /> Client</div>
+                          <div className="font-medium">{project.clientName}</div>
+                        </div>
+                      )}
+                      {project.role && (
+                        <div>
+                          <div className="text-xs text-muted uppercase tracking-wider mb-1 flex items-center gap-2"><Briefcase size={14} /> Role</div>
+                          <div className="font-medium">{project.role}</div>
+                        </div>
+                      )}
+                      {project.timeline && (
+                        <div>
+                          <div className="text-xs text-muted uppercase tracking-wider mb-1 flex items-center gap-2"><Clock size={14} /> Timeline</div>
+                          <div className="font-medium">{project.timeline}</div>
+                        </div>
+                      )}
+                      {project.liveUrl && (
+                        <div>
+                          <div className="text-xs text-muted uppercase tracking-wider mb-2 flex items-center gap-2"><ExternalLink size={14} /> Live Link</div>
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">
+                            Visit Project <ExternalLink size={12} />
+                          </a>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              </FadeIn>
+
+                    {techStackArray.length > 0 && (
+                      <div className="mt-8 pt-8 border-t border-white/10">
+                        <div className="text-xs text-muted uppercase tracking-wider mb-4 flex items-center gap-2"><Code size={14} /> Technologies</div>
+                        <div className="flex flex-wrap gap-2">
+                          {techStackArray.map((tech) => (
+                            <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/80">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </FadeIn>
+              </div>
             </div>
 
             {/* Right Column: Case Study Content */}
