@@ -22,6 +22,12 @@ model Project {
   category        String
   description     String
   fullDescription String   @default("") @db.Text
+  clientName      String?
+  timeline        String?
+  role            String?
+  techStack       String?
+  challenges      String?  @db.Text
+  solution        String?  @db.Text
   imageUrl        String
   liveUrl         String?
   createdAt       DateTime @default(now())
