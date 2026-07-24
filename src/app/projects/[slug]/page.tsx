@@ -68,15 +68,15 @@ export default async function ProjectDetailPage(props: PageProps) {
 
           {/* Hero image */}
           <FadeIn delay={0.2}>
-            <div className="h-64 md:h-[500px] p-4 md:p-12 rounded-3xl bg-glass-bg border border-white/5 overflow-hidden mb-16 relative flex items-center justify-center">
+            <div className="h-64 md:h-[400px] rounded-3xl overflow-hidden mb-16 relative">
               {project.imageUrl && project.imageUrl !== "/placeholder.png" ? (
                 <img 
                   src={project.imageUrl} 
                   alt={project.title} 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center rounded-2xl">
+                <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
                   <span className="text-8xl font-bold text-foreground/10" style={{ fontFamily: "var(--font-heading)" }}>
                     {project.title.charAt(0)}
                   </span>
