@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     title: "iInfynite — Freelance IT Agency",
     description:
       "Premium IT services: Web Dev, App Dev, Graphic Design, Startup Acceleration, Digital Growth & Custom Software.",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
