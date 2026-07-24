@@ -16,14 +16,15 @@ model Service {
 }
 
 model Project {
-  id          String   @id @default(cuid())
-  title       String
-  slug        String   @unique
-  category    String
-  description String
-  imageUrl    String
-  liveUrl     String?
-  createdAt   DateTime @default(now())
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  category        String
+  description     String
+  fullDescription String   @default("") @db.Text
+  imageUrl        String
+  liveUrl         String?
+  createdAt       DateTime @default(now())
 }
 
 model TeamMember {

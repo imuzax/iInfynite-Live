@@ -41,7 +41,6 @@ async function main() {
   const projects = [
     { title: "Velocity Luxe App", slug: "velocity-luxe-app", category: "App Development", description: "Premium e-commerce mobile experience with 3D UI elements.", imageUrl: "/ecommerce-mockup.png" },
     { title: "Data Analytics Dashboard", slug: "data-analytics-dashboard", category: "Custom Software", description: "Sophisticated IT solutions portfolio analytics and monitoring.", imageUrl: "/dashboard-mockup.png" },
-    { title: "Brand Identity Suite", slug: "brand-identity-suite", category: "Graphic Design", description: "Complete brand overhaul including logo and typography.", imageUrl: "/placeholder.png" },
   ];
 
   for (const project of projects) {
