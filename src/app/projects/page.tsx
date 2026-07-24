@@ -11,18 +11,20 @@ const categories = ["All", "Web Development", "App Development", "Graphic Design
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    slug: "e-commerce-platform",
-    category: "Web Development",
-    description: "A full-featured online store with payment integration, inventory management, and analytics dashboard.",
+    title: "Velocity Luxe App",
+    slug: "velocity-luxe-app",
+    category: "App Development",
+    description: "Premium e-commerce mobile experience with 3D UI elements.",
     color: "from-blue-500/20 to-purple-500/20",
+    imageUrl: "/ecommerce-mockup.png",
   },
   {
-    title: "Fitness Tracking App",
-    slug: "fitness-tracking-app",
-    category: "App Development",
-    description: "Cross-platform fitness app with workout tracking, nutrition planning, and social features.",
+    title: "Data Analytics Dashboard",
+    slug: "data-analytics-dashboard",
+    category: "Custom Software",
+    description: "Sophisticated IT solutions portfolio analytics and monitoring.",
     color: "from-green-500/20 to-emerald-500/20",
+    imageUrl: "/dashboard-mockup.png",
   },
   {
     title: "Brand Identity Suite",
@@ -99,15 +101,20 @@ export default function ProjectsPage() {
               <FadeIn key={project.slug} delay={index * 0.1}>
                 <Link href={`/projects/${project.slug}`}>
                   <GlassCard className="group cursor-pointer h-full">
-                    <div
-                      className={`h-48 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center mb-5`}
-                    >
-                      <span
-                        className="text-4xl font-bold text-foreground/20"
-                        style={{ fontFamily: "var(--font-heading)" }}
-                      >
-                        {project.title.charAt(0)}
-                      </span>
+                    <div className="h-48 rounded-xl bg-glass-bg border border-white/5 overflow-hidden mb-5 relative group-hover:border-white/10 transition-colors">
+                      {project.imageUrl ? (
+                        <img 
+                          src={project.imageUrl} 
+                          alt={project.title} 
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className={`w-full h-full bg-gradient-to-br ${project.color} flex items-center justify-center`}>
+                          <span className="text-4xl font-bold text-foreground/20" style={{ fontFamily: "var(--font-heading)" }}>
+                            {project.title.charAt(0)}
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="badge badge-new">{project.category}</span>
