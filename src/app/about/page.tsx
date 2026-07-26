@@ -22,8 +22,12 @@ const values = [
 export default async function AboutPage() {
   const teamMembers = await prisma.teamMember.findMany();
   
-  const founders = teamMembers.filter((m) => m.isFounder);
-  const others = teamMembers.filter((m) => !m.isFounder);
+  // Sort so Founder appears first, followed by other team members uniformly
+  const sortedTeam = [...teamMembers].sort((a, b) => {
+    if (a.isFounder && !b.isFounder) return -1;
+    if (!a.isFounder && b.isFounder) return 1;
+    return 0;
+  });
 
   return (
     <div className="pt-32">
@@ -90,90 +94,64 @@ export default async function AboutPage() {
             />
           </FadeIn>
 
-          {/* Founders Section (Prominent) */}
-          {founders.length > 0 && (
-            <div className="mb-20 space-y-8 max-w-5xl mx-auto">
-              {founders.map((founder, i) => (
-                <FadeIn key={founder.id} delay={i * 0.1}>
-                  <div className="glass-card-static rounded-3xl p-8 md:p-12 border border-accent/20 bg-accent/5">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-                      <div className="md:col-span-5">
-                        <div className="w-full aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl relative">
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-                          {founder.photoUrl ? (
-                            <img src={founder.photoUrl} alt={founder.name} className="w-full h-full object-cover" />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center text-8xl font-bold text-muted">
-                              {founder.name.charAt(0)}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                      <div className="md:col-span-7">
-                        <div className="inline-block px-3 py-1 rounded-full bg-accent text-black text-xs font-bold mb-4 tracking-widest uppercase">
-                          Founder
-                        </div>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-                          {founder.name}
-                        </h3>
-                        <p className="text-base text-accent mb-4 font-medium">{founder.role}</p>
-                        
-                        {founder.bio && (
-                          <div className="prose prose-invert prose-p:text-muted prose-p:leading-relaxed mb-6 whitespace-pre-wrap text-sm md:text-base">
-                            {founder.bio}
-                          </div>
-                        )}
-                        
-                        {founder.linkedin && (
-                          <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
-                            <ExternalLink size={18} /> Connect on LinkedIn
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          )}
-
-          {/* Other Team Members Grid */}
-          {others.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {others.map((member, index) => (
-                <FadeIn key={member.id} delay={index * 0.1}>
-                  <GlassCard className="text-center h-full flex flex-col items-center p-8">
-                    <div className="w-28 h-28 rounded-full overflow-hidden border border-white/10 bg-black mb-6 shrink-0 shadow-lg">
+          {/* Unified Team Members Grid (All members uniform and equal size) */}
+          {sortedTeam.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              {sortedTeam.map((member, index) => (
+                <FadeIn key={member.id} delay={index * 0.1} className="h-full">
+                  <GlassCard className="p-0 overflow-hidden h-full flex flex-col group border border-white/10 hover:border-white/20 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300">
+                    {/* Uniform Photo Area */}
+                    <div className="w-full aspect-[4/3] bg-black/60 relative overflow-hidden border-b border-white/10 shrink-0">
                       {member.photoUrl ? (
-                        <img src={member.photoUrl} alt={member.name} className="w-full h-full object-cover" />
+                        <img
+                          src={member.photoUrl}
+                          alt={member.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-3xl font-bold text-muted">
+                        <div className="w-full h-full flex items-center justify-center text-6xl font-bold text-muted bg-white/5">
                           {member.name.charAt(0)}
                         </div>
                       )}
-                    </div>
-                    <h3
-                      className="text-lg font-bold mb-1"
-                      style={{ fontFamily: "var(--font-heading)" }}
-                    >
-                      {member.name}
-                    </h3>
-                    <p className="text-accent text-sm font-medium mb-4">{member.role}</p>
-                    
-                    {member.bio && (
-                      <p className="text-muted text-sm line-clamp-3 mb-6">
-                        {member.bio}
-                      </p>
-                    )}
-                    
-                    <div className="mt-auto">
-                      {member.linkedin ? (
-                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted hover:text-white transition-colors">
-                          <ExternalLink size={16} /> LinkedIn
-                        </a>
-                      ) : (
-                        <span className="text-sm text-muted/50 invisible">No LinkedIn</span>
+                      {member.isFounder && (
+                        <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md border border-accent/40 text-accent text-[11px] font-bold tracking-widest uppercase shadow-xl">
+                          Founder & CEO
+                        </div>
                       )}
+                    </div>
+
+                    {/* Content Area */}
+                    <div className="p-6 md:p-7 flex flex-col flex-grow text-left">
+                      <h3
+                        className="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-accent transition-colors"
+                        style={{ fontFamily: "var(--font-heading)" }}
+                      >
+                        {member.name}
+                      </h3>
+                      <p className="text-accent text-sm font-semibold mb-4 tracking-wide">
+                        {member.role}
+                      </p>
+
+                      {member.bio && (
+                        <p className="text-muted text-sm leading-relaxed mb-6 flex-grow font-light line-clamp-4">
+                          {member.bio}
+                        </p>
+                      )}
+
+                      <div className="pt-4 border-t border-white/10 mt-auto flex items-center justify-between">
+                        {member.linkedin ? (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-xs font-semibold text-white/70 hover:text-accent transition-colors duration-200"
+                          >
+                            <ExternalLink size={15} className="text-accent" /> Connect on LinkedIn
+                          </a>
+                        ) : (
+                          <span className="text-xs text-muted/40 font-light">iINFYNITE Team</span>
+                        )}
+                      </div>
                     </div>
                   </GlassCard>
                 </FadeIn>
