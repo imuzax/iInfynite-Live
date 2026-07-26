@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { put, del } from "@vercel/blob";
 import { getSession } from "@/lib/session";
+import { promises as fs } from "fs";
+import path from "path";
 
 export async function POST(request: NextRequest) {
   const session = await getSession();
@@ -33,16 +35,45 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const blob = await put(file.name, file, {
-      access: "public",
-      addRandomSuffix: true,
-    });
+    // Tier 1: Try Vercel Blob if token is available
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
+      try {
+        const blob = await put(file.name, file, {
+          access: "public",
+          addRandomSuffix: true,
+        });
+        return NextResponse.json({ url: blob.url, source: "vercel-blob" });
+      } catch (err) {
+        console.warn("Vercel Blob upload failed, falling back to disk/base64:", err);
+      }
+    }
 
-    return NextResponse.json({ url: blob.url });
+    // Read file buffer once for fallback tiers
+    const buffer = Buffer.from(await file.arrayBuffer());
+
+    // Tier 2: Try saving to local disk (public/uploads/) in non-read-only environments
+    try {
+      const uploadDir = path.join(process.cwd(), "public/uploads");
+      await fs.mkdir(uploadDir, { recursive: true });
+      
+      const ext = file.name.split(".").pop() || "jpg";
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 8)}.${ext}`;
+      const filePath = path.join(uploadDir, fileName);
+      
+      await fs.writeFile(filePath, buffer);
+      return NextResponse.json({ url: `/uploads/${fileName}`, source: "local-disk" });
+    } catch (diskError) {
+      console.warn("Local disk write failed (serverless read-only filesystem), falling back to Base64 Data URI in database:", diskError);
+    }
+
+    // Tier 3: Guaranteed Serverless Fallback (Base64 Data URI saved directly to PostgreSQL)
+    const base64String = buffer.toString("base64");
+    const dataUrl = `data:${file.type};base64,${base64String}`;
+    return NextResponse.json({ url: dataUrl, source: "database-base64" });
   } catch (error) {
     console.error("Upload error:", error);
     return NextResponse.json(
-      { error: "Upload failed. Make sure Vercel Blob is configured." },
+      { error: "Upload failed unexpectedly." },
       { status: 500 }
     );
   }

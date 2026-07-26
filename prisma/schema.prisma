@@ -9,8 +9,8 @@ datasource db {
 model Service {
   id          String   @id @default(cuid())
   title       String
-  icon        String
-  description String
+  icon        String   @db.Text
+  description String   @db.Text
   order       Int      @default(0)
   createdAt   DateTime @default(now())
 }
@@ -20,7 +20,7 @@ model Project {
   title           String
   slug            String   @unique
   category        String
-  description     String
+  description     String   @db.Text
   fullDescription String   @default("") @db.Text
   clientName      String?
   timeline        String?
@@ -28,7 +28,7 @@ model Project {
   techStack       String?
   challenges      String?  @db.Text
   solution        String?  @db.Text
-  imageUrl        String
+  imageUrl        String   @db.Text
   liveUrl         String?
   createdAt       DateTime @default(now())
 }
@@ -38,7 +38,7 @@ model TeamMember {
   name      String
   role      String
   bio       String? @db.Text
-  photoUrl  String
+  photoUrl  String  @db.Text
   linkedin  String?
   isFounder Boolean @default(false)
 }
@@ -48,14 +48,14 @@ model Lead {
   name      String
   email     String
   subject   String
-  message   String
+  message   String   @db.Text
   status    String   @default("new")
   createdAt DateTime @default(now())
 }
 
 model SiteContent {
   key   String @id
-  value String
+  value String @db.Text
 }
 
 model AdminUser {
