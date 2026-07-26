@@ -51,8 +51,11 @@ export function Footer() {
       {/* Subtle Ambient Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/[0.04] rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Massive, Unmistakable Enterprise Breathing Room (200px Top Gap, 160px Bottom Gap on Desktop) */}
-      <div className="container-main pt-[100px] md:pt-[160px] lg:pt-[200px] pb-[100px] md:pb-[140px] lg:pb-[160px] relative z-10">
+      {/* Unbreakable Physical DOM Spacer Block above footer content (Forces 160px to 256px of hard physical height) */}
+      <div className="w-full h-32 md:h-48 lg:h-64 shrink-0 pointer-events-none" aria-hidden="true" />
+
+      {/* Main Footer Container with standard reliable utility padding */}
+      <div className="container-main pt-8 md:pt-12 pb-12 md:pb-16 relative z-10">
         
         {/* Balanced 5-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-10 items-start">
@@ -116,8 +119,11 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom Copyright Bar - 120px Top Margin above divider line */}
-        <div className="mt-[80px] md:mt-[120px] pt-[40px] md:pt-[50px] border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs md:text-sm text-white/50">
+        {/* Unbreakable Physical DOM Spacer between Link Columns and Copyright Line (Forces 128px to 192px of space) */}
+        <div className="w-full h-24 md:h-36 lg:h-48 shrink-0 pointer-events-none" aria-hidden="true" />
+
+        {/* Bottom Copyright Bar */}
+        <div className="pt-10 md:pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs md:text-sm text-white/50">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-center md:text-left">
             <span>© {new Date().getFullYear()} iInfynite. All rights reserved.</span>
             <span className="hidden sm:inline text-white/20">•</span>
@@ -143,6 +149,9 @@ export function Footer() {
             </a>
           </div>
         </div>
+
+        {/* Unbreakable Physical DOM Spacer below Copyright Bar (Forces 128px to 192px of space before screen bottom) */}
+        <div className="w-full h-24 md:h-36 lg:h-48 shrink-0 pointer-events-none" aria-hidden="true" />
       </div>
     </footer>
   );
