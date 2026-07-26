@@ -110,7 +110,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto mb-16">
               <Link
                 href="/contact"
-                className="btn-primary text-sm sm:text-base px-9 py-4 rounded-full bg-white text-black font-semibold hover:bg-white/90 w-full sm:w-auto shadow-[0_0_35px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                className="btn-primary text-sm sm:text-base px-9 py-4 rounded-full bg-white text-black font-semibold hover:bg-white/90 w-full sm:w-auto shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <span>Book Free Consultation</span>
                 <ArrowRight size={16} />
@@ -247,8 +247,8 @@ export default function HomePage() {
               <FadeIn key={srv.title} delay={idx * 0.08}>
                 <div className="p-7 rounded-3xl bg-[#0c0c10] border border-white/10 hover:border-white/25 hover:bg-[#111116] transition-all duration-300 flex flex-col h-full group">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 shadow-md">
-                      <srv.icon size={22} className="text-white/80 group-hover:text-black transition-colors" />
+                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-200 shadow-sm">
+                      <srv.icon size={22} className="text-white/80 group-hover:text-white transition-colors" />
                     </div>
                     <span className="text-[11px] font-semibold uppercase px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">
                       {srv.outcome}
@@ -263,9 +263,9 @@ export default function HomePage() {
                     {srv.desc}
                   </p>
 
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-white/70 group-hover:text-white mt-auto">
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-white/70 group-hover:text-white mt-auto transition-colors">
                     <span>Learn How We Implement This</span>
-                    <ArrowRight size={16} className="text-blue-400 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={16} className="text-blue-400 transition-colors" />
                   </div>
                 </div>
               </FadeIn>
@@ -303,9 +303,9 @@ export default function HomePage() {
                   <div className="text-xs font-mono uppercase text-blue-400 font-semibold mb-2">{sol.industry}</div>
                   <h4 className="text-lg font-bold text-white mb-2 group-hover:text-white transition-colors">{sol.title}</h4>
                   <p className="text-xs text-white/60 line-clamp-2 mb-6 flex-1 leading-relaxed">{sol.shortDescription}</p>
-                  <div className="flex items-center justify-between text-xs font-semibold text-white/70 pt-3 border-t border-white/10">
+                  <div className="flex items-center justify-between text-xs font-semibold text-white/70 pt-3 border-t border-white/10 group-hover:text-white transition-colors">
                     <span>View Blueprint</span>
-                    <ArrowUpRight size={14} className="text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight size={14} className="text-blue-400 transition-colors" />
                   </div>
                 </Link>
               ))}
@@ -374,7 +374,7 @@ export default function HomePage() {
               }
             ].map((st, idx) => (
               <FadeIn key={st.step} delay={idx * 0.1}>
-                <div className="p-7 rounded-3xl bg-[#0b0b0e] border border-white/10 flex flex-col h-full relative overflow-hidden group hover:border-white/25 transition-all">
+                <div className="p-7 rounded-3xl bg-[#0b0b0e] border border-white/10 flex flex-col h-full relative overflow-hidden group hover:border-white/20 transition-all duration-200">
                   <div className="text-4xl font-bold font-mono text-white/15 mb-6 group-hover:text-white/30 transition-colors">
                     {st.step}
                   </div>
@@ -501,7 +501,7 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                   <Link
                     href="/contact"
-                    className="btn-primary text-base px-10 py-4 rounded-full bg-white text-black font-semibold hover:bg-white/90 w-full sm:w-auto shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2"
+                    className="btn-primary text-base px-10 py-4 rounded-full bg-white text-black font-semibold hover:bg-white/90 w-full sm:w-auto shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
                   >
                     <span>Schedule Free Technical Call</span>
                     <ArrowRight size={18} />
