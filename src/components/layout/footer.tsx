@@ -51,8 +51,8 @@ export function Footer() {
       {/* Subtle Ambient Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-600/[0.03] rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Clean, Suitable, Professional Enterprise Spacing (pt-24 = 96px top gap, pb-20 = 80px bottom gap) */}
-      <div className="container-main pt-20 md:pt-24 pb-16 md:pb-20 relative z-10">
+      {/* 100% Standard Normal Industry Website Spacing (py-12 to py-16 = 48px to 64px) */}
+      <div className="container-main py-12 md:py-16 relative z-10">
         
         {/* Balanced 5-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 items-start">
@@ -116,8 +116,8 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom Copyright Bar - Clean 64px to 80px Top Margin above divider line */}
-        <div className="mt-16 md:mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50">
+        {/* Bottom Copyright Bar - Standard Normal Website 48px Top Margin */}
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-center md:text-left">
             <span>© {new Date().getFullYear()} iInfynite. All rights reserved.</span>
             <span className="hidden sm:inline text-white/20">•</span>
