@@ -82,17 +82,74 @@ export default function ContactPage() {
 
                       <div>
                         <label
+                          htmlFor="inquiryType"
+                          className="block text-sm font-medium mb-2"
+                        >
+                          Inquiry / Industry Type <span className="text-accent">*</span>
+                        </label>
+                        <select
+                          id="inquiryType"
+                          name="inquiryType"
+                          required
+                          defaultValue=""
+                          className="input-glass bg-[#0a0a0a] w-full cursor-pointer appearance-none"
+                          style={{
+                            backgroundImage:
+                              'url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23ffffff\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6 9 12 15 18 9\'/%3e%3c/svg%3e")',
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "right 1rem center",
+                            backgroundSize: "1.2em",
+                          }}
+                        >
+                          <option value="" disabled className="bg-[#0a0a0a] text-muted">
+                            Select an Industry / Service Type...
+                          </option>
+                          <option value="Startup MVP & Acceleration" className="bg-[#0a0a0a] text-white">
+                            🚀 Startup MVP & Acceleration (From Idea to Launch)
+                          </option>
+                          <option value="Web & Mobile App Development" className="bg-[#0a0a0a] text-white">
+                            📱 Web & Mobile App Development (iOS, Android, SaaS)
+                          </option>
+                          <option value="AI & Automation Solutions" className="bg-[#0a0a0a] text-white">
+                            🤖 AI & Automation Solutions (LLMs, Custom Agents, ATS)
+                          </option>
+                          <option value="Affiliate Landing Pages & Marketing" className="bg-[#0a0a0a] text-white">
+                            🎯 Affiliate Landing Pages & Marketing (High-Conversion Funnels)
+                          </option>
+                          <option value="EdTech & Education Systems" className="bg-[#0a0a0a] text-white">
+                            🎓 EdTech & Education Systems (LMS, Student & Faculty Portals)
+                          </option>
+                          <option value="Healthcare & Medical Tech" className="bg-[#0a0a0a] text-white">
+                            🏥 Healthcare & Medical Tech (HIPAA/GDPR Compliant Systems)
+                          </option>
+                          <option value="E-Commerce & Retail Platforms" className="bg-[#0a0a0a] text-white">
+                            🛍️ E-Commerce & Retail Platforms (Custom Storefronts, API Integrations)
+                          </option>
+                          <option value="Green Energy & Sustainability" className="bg-[#0a0a0a] text-white">
+                            🌱 Green Energy & Sustainability (Solar ROI Calculators, Clean Tech)
+                          </option>
+                          <option value="Custom Software / Enterprise IT" className="bg-[#0a0a0a] text-white">
+                            ⚙️ Custom Software / Enterprise IT (Cloud Architecture, DevOps)
+                          </option>
+                          <option value="Other / Custom Inquiry" className="bg-[#0a0a0a] text-white">
+                            ✨ Other / Custom Inquiry
+                          </option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label
                           htmlFor="subject"
                           className="block text-sm font-medium mb-2"
                         >
-                          Subject
+                          Specific Subject / Topic <span className="text-accent">*</span>
                         </label>
                         <input
                           id="subject"
                           name="subject"
                           type="text"
                           required
-                          placeholder="What's this about?"
+                          placeholder="e.g. Need an AI tutoring app for 10,000 students"
                           className="input-glass"
                         />
                       </div>

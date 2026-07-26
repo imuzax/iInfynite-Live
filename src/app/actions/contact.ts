@@ -15,10 +15,14 @@ export async function submitContactForm(
   _prevState: { success?: boolean; error?: string } | undefined,
   formData: FormData
 ) {
+  const inquiryType = formData.get("inquiryType") as string;
+  const rawSubject = formData.get("subject") as string;
+  const combinedSubject = inquiryType && rawSubject ? `[${inquiryType}] ${rawSubject}` : rawSubject || inquiryType || "General Inquiry";
+
   const parsed = ContactSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
-    subject: formData.get("subject"),
+    subject: combinedSubject,
     message: formData.get("message"),
   });
 
