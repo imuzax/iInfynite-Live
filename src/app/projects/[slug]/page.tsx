@@ -55,12 +55,12 @@ export default async function ProjectDetailPage(props: PageProps) {
                 </span>
               </div>
               <h1
-                className="text-4xl md:text-6xl font-bold mb-6"
+                className="text-3xl md:text-4xl font-bold mb-4"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {project.title}
               </h1>
-              <p className="text-lg md:text-xl text-muted max-w-3xl mx-auto">
+              <p className="text-base md:text-lg text-muted max-w-3xl mx-auto">
                 {project.description}
               </p>
             </div>

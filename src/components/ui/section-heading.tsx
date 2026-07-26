@@ -19,7 +19,7 @@ export function SectionHeading({
     <div className={cn(centered && "text-center", "mb-16", className)}>
       <h2
         className={cn(
-          "text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4",
+          "text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-3",
           gradient && "gradient-text"
         )}
         style={{ fontFamily: "var(--font-heading)" }}
@@ -27,7 +27,7 @@ export function SectionHeading({
         {title}
       </h2>
       {subtitle && (
-        <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-muted text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
           {subtitle}
         </p>
       )}

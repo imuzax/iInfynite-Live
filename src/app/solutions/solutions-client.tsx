@@ -44,7 +44,7 @@ export function SolutionsDirectory() {
               100+ Proven Software Architectures
             </div>
             <h1
-              className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-tight"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Ready Business Solutions Engine
