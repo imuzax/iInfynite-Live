@@ -52,6 +52,66 @@ async function main() {
   }
   console.log("✅ Projects seeded");
 
+  // Seed authentic Indian professional team members (only if not already present, preserving admin edits)
+  const teamMembers = [
+    {
+      name: "Muzammil Shaikh",
+      role: "Founder & CEO",
+      bio: "Visionary tech leader with 8+ years of experience building high-ticket enterprise SaaS, AI automation pipelines, and scalable cloud architectures.",
+      photoUrl: "/team/founder.jpg",
+      linkedin: "https://linkedin.com/in/muzammil-shaikh",
+      isFounder: true,
+    },
+    {
+      name: "Rahul Deshmukh",
+      role: "Team Lead & Senior Architect",
+      bio: "Full-stack architecture specialist driving technical delivery, cloud migrations, and high-performance React/Next.js systems.",
+      photoUrl: "/team/team-lead.jpg",
+      linkedin: "https://linkedin.com/in/rahul-deshmukh",
+      isFounder: false,
+    },
+    {
+      name: "Priya Sharma",
+      role: "Lead UI/UX & Product Designer",
+      bio: "Award-winning product designer crafting premium user interfaces, design systems, and conversion-focused digital journeys.",
+      photoUrl: "/team/uiux-lead.jpg",
+      linkedin: "https://linkedin.com/in/priya-sharma",
+      isFounder: false,
+    },
+    {
+      name: "Vikramaditya Patil",
+      role: "Senior AI / MLOps Engineer",
+      bio: "Specializing in custom LLM integration, workflow automation, and predictive data modeling for enterprise clients.",
+      photoUrl: "/team/ai-engineer.jpg",
+      linkedin: "https://linkedin.com/in/vikram-patil",
+      isFounder: false,
+    },
+    {
+      name: "Ananya Iyer",
+      role: "Lead Mobile Engineer (iOS/Android)",
+      bio: "Expert in React Native and Flutter, building ultra-smooth native mobile experiences with 99.9% crash-free rates.",
+      photoUrl: "/team/mobile-lead.jpg",
+      linkedin: "https://linkedin.com/in/ananya-iyer",
+      isFounder: false,
+    },
+    {
+      name: "Siddharth Mehta",
+      role: "VP of Client Success & Growth",
+      bio: "Ensuring seamless agency communication, transparent agile delivery, and strategic revenue growth for our partners.",
+      photoUrl: "/team/client-success.jpg",
+      linkedin: "https://linkedin.com/in/siddharth-mehta",
+      isFounder: false,
+    },
+  ];
+
+  for (const member of teamMembers) {
+    const existing = await prisma.teamMember.findFirst({ where: { name: member.name } });
+    if (!existing) {
+      await prisma.teamMember.create({ data: member });
+    }
+  }
+  console.log("✅ Team members seeded");
+
   // Seed site content
   const content = [
     { key: "hero_heading", value: "We Build Digital Products That Drive Growth" },
