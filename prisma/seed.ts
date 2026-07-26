@@ -39,21 +39,6 @@ async function main() {
 
   // Seed projects
   const projects = [
-    {
-      title: "Hirotix - AI Recruitment & ATS Platform",
-      slug: "hirotix-ai-recruitment-platform",
-      category: "AI & Custom Software",
-      description: "Enterprise-grade AI Recruitment Ecosystem featuring automated resume parsing, ML skill matching, and video interview simulation.",
-      fullDescription: "Hirotix is an advanced AI-powered Applicant Tracking System (ATS) and Recruitment Ecosystem designed to bridge the gap between job seekers and enterprise recruiters. Built on a resilient multi-container Docker microservice architecture, it combines a Java Spring Boot backend for robust transactional operations with a Python FastAPI microservice for real-time natural language resume parsing and semantic candidate ranking.",
-      clientName: "AI R&D / Enterprise SaaS",
-      timeline: "6 Months",
-      role: "Lead Architecture & AI Engineering",
-      techStack: "Java Spring Boot, Python FastAPI, Docker Compose, MySQL, Next.js, LLM Pipelines",
-      challenges: "Architecting a low-latency NLP resume parser capable of processing complex unstructured PDF/Word documents while maintaining secure container orchestration across JVM and Python services.",
-      solution: "Implemented an asynchronous microservice architecture using Docker Compose, decoupling heavy ML candidate evaluation from the core Spring Boot transactional API.",
-      imageUrl: "/dashboard-mockup.png",
-      liveUrl: "https://github.com/imuzax/Hirotix",
-    },
     { title: "Velocity Luxe App", slug: "velocity-luxe-app", category: "App Development", description: "Premium e-commerce mobile experience with 3D UI elements.", imageUrl: "/ecommerce-mockup.png" },
     { title: "Data Analytics Dashboard", slug: "data-analytics-dashboard", category: "Custom Software", description: "Sophisticated IT solutions portfolio analytics and monitoring.", imageUrl: "/dashboard-mockup.png" },
   ];
