@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Mail, MapPin, Phone, ShieldCheck, Lock, MessageSquare } from "lucide-react";
+import { LinkedinIcon, GithubIcon } from "@/components/ui/social-icons";
 import { Logo } from "@/components/ui/logo";
 
 const footerLinks = [
@@ -87,6 +88,28 @@ export function Footer() {
               <div className="flex items-center gap-2.5">
                 <Phone size={15} className="text-emerald-400 shrink-0" />
                 <a href="tel:9588617714" className="hover:text-white transition-colors duration-200">+91 95886 17714</a>
+              </div>
+
+              {/* Official Company Social Links */}
+              <div className="pt-4 flex items-center gap-3 flex-wrap">
+                <a
+                  href="https://www.linkedin.com/company/113274914/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/[0.05] hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/40 text-xs font-semibold text-white/80 hover:text-white transition-all duration-200 group"
+                >
+                  <LinkedinIcon size={15} className="text-blue-400 group-hover:scale-110 transition-transform shrink-0" />
+                  <span>LinkedIn Page</span>
+                </a>
+                <a
+                  href="https://github.com/imuzax/iInfynite-Live"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/[0.05] hover:bg-white/10 border border-white/10 hover:border-white/25 text-xs font-semibold text-white/80 hover:text-white transition-all duration-200 group"
+                >
+                  <GithubIcon size={15} className="text-white/90 group-hover:scale-110 transition-transform shrink-0" />
+                  <span>GitHub Repo</span>
+                </a>
               </div>
             </div>
           </div>

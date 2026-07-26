@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Target, Eye, Heart, ExternalLink } from "lucide-react";
+import { LinkedinIcon, GithubIcon } from "@/components/ui/social-icons";
 import { FadeIn } from "@/components/motion/fade-in";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -138,18 +139,31 @@ export default async function AboutPage() {
                         </p>
                       )}
 
-                      <div className="pt-4 border-t border-white/10 mt-auto flex items-center justify-between">
+                      <div className="pt-4 border-t border-white/10 mt-auto flex items-center justify-between gap-3 flex-wrap">
                         {member.linkedin ? (
                           <a
                             href={member.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-xs font-semibold text-white/70 hover:text-accent transition-colors duration-200"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 hover:text-blue-400 transition-colors duration-200 group/btn"
                           >
-                            <ExternalLink size={15} className="text-accent" /> Connect on LinkedIn
+                            <LinkedinIcon size={15} className="text-blue-400 group-hover/btn:scale-110 transition-transform shrink-0" />
+                            <span>LinkedIn</span>
                           </a>
                         ) : (
                           <span className="text-xs text-muted/40 font-light">iINFYNITE Team</span>
+                        )}
+
+                        {member.isFounder && (
+                          <a
+                            href="https://github.com/imuzax"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 hover:text-white transition-colors duration-200 group/btn"
+                          >
+                            <GithubIcon size={15} className="text-white/90 group-hover/btn:scale-110 transition-transform shrink-0" />
+                            <span>GitHub Profile</span>
+                          </a>
                         )}
                       </div>
                     </div>
