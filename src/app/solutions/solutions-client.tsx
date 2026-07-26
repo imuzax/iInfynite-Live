@@ -118,7 +118,7 @@ export function SolutionsDirectory() {
               <FadeIn key={solution.slug} delay={(i % 6) * 0.05}>
                 <Link
                   href={`/solutions/${solution.slug}`}
-                  className="premium-card p-6 sm:p-7 flex flex-col h-full group hover:border-white/30 hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden"
+                  className="premium-card p-6 sm:p-7 flex flex-col h-full group hover:border-white/25 transition-all duration-200 relative overflow-hidden"
                 >
                   {/* Top badges */}
                   <div className="flex items-center justify-between gap-2 mb-4">
@@ -126,7 +126,7 @@ export function SolutionsDirectory() {
                       {solution.industry}
                     </span>
                     <span className="text-xs text-white/40 font-mono group-hover:text-white/70 transition-colors flex items-center gap-1">
-                      Explore <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                      Explore <ArrowRight size={12} className="text-blue-400 transition-colors" />
                     </span>
                   </div>
 

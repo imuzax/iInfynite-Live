@@ -206,42 +206,37 @@ h1, h2, h3, h4, h5, h6 {
     background: radial-gradient(circle at 50% 100%, rgba(25, 30, 40, 0.2) 0%, rgba(8, 8, 8, 1) 75%);
   }
 
-  /* Premium Card Hover Glows & Lift */
+  /* Professional Clean Card - Zero Jump & Calm Styling */
   .premium-card {
-    background: rgba(14, 14, 16, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(18, 18, 22, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
   .premium-card:hover {
-    background: rgba(20, 20, 24, 0.85);
-    border-color: rgba(255, 255, 255, 0.25);
-    transform: translateY(-6px);
-    box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 255, 255, 0.08);
+    background: rgba(24, 24, 30, 0.85);
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
   }
 
-  /* Colored Card Glow Variants on Hover */
+  /* Subtle Border Highlights on Hover */
   .premium-card-blue:hover {
-    border-color: rgba(59, 130, 246, 0.4);
-    box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.35);
   }
 
   .premium-card-emerald:hover {
-    border-color: rgba(16, 185, 129, 0.4);
-    box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.35);
   }
 
   .premium-card-purple:hover {
-    border-color: rgba(168, 85, 247, 0.4);
-    box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.35);
   }
 
   .premium-card-amber:hover {
-    border-color: rgba(245, 158, 11, 0.4);
-    box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.35);
   }
 
   /* Admin panel specific */
