@@ -51,8 +51,8 @@ export function Footer() {
       {/* Subtle Ambient Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-600/[0.03] rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Standard Normal Balanced Spacing (pt-20 = 80px top gap, pb-16 = 64px bottom gap) */}
-      <div className="container-main pt-14 md:pt-16 lg:pt-20 pb-12 md:pb-16 relative z-10">
+      {/* Standard Normal Balanced Spacing (pt-20 = 80px top gap, pb-8 = 32px bottom gap for clean copyright margin) */}
+      <div className="container-main pt-14 md:pt-16 lg:pt-20 pb-6 md:pb-8 relative z-10">
         
         {/* Balanced 5-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 items-start">
