@@ -111,10 +111,14 @@ export default async function ProjectDetailPage(props: PageProps) {
                         </div>
                       )}
                       {project.liveUrl && (
-                        <div>
-                          <div className="text-xs text-muted uppercase tracking-wider mb-2 flex items-center gap-2"><ExternalLink size={14} /> Live Link</div>
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">
-                            Visit Project <ExternalLink size={12} />
+                        <div className="pt-2">
+                          <a 
+                            href={project.liveUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="w-full py-3 px-4 rounded-xl bg-accent text-black font-semibold flex items-center justify-center gap-2 hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
+                          >
+                            🚀 View Live Website <ExternalLink size={16} />
                           </a>
                         </div>
                       )}
