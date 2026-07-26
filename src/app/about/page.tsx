@@ -154,9 +154,9 @@ export default async function AboutPage() {
                           <span className="text-xs text-muted/40 font-light">iINFYNITE Team</span>
                         )}
 
-                        {member.isFounder && (
+                        {(member.github || member.isFounder) && (
                           <a
-                            href="https://github.com/imuzax"
+                            href={member.github || "https://github.com/imuzax"}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 hover:text-white transition-colors duration-200 group/btn"

@@ -11,6 +11,7 @@ interface TeamMember {
   bio: string | null;
   photoUrl: string;
   linkedin: string | null;
+  github: string | null;
   isFounder: boolean;
 }
 
@@ -173,9 +174,15 @@ export default function AdminTeamPage() {
                 )}
               </div>
 
-              <div>
-                <label className="block text-sm font-medium mb-1">LinkedIn URL (optional)</label>
-                <input name="linkedin" defaultValue={editing?.linkedin || ""} className="input-glass" placeholder="https://linkedin.com/in/..." />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium mb-1">LinkedIn URL (optional)</label>
+                  <input name="linkedin" defaultValue={editing?.linkedin || ""} className="input-glass" placeholder="https://linkedin.com/in/..." />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1">GitHub URL (optional)</label>
+                  <input name="github" defaultValue={editing?.github || ""} className="input-glass" placeholder="https://github.com/..." />
+                </div>
               </div>
 
               <div className="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-xl">
@@ -243,14 +250,21 @@ export default function AdminTeamPage() {
                 </p>
               )}
 
-              <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                {member.linkedin ? (
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-muted hover:text-white transition-colors">
-                    <ExternalLink size={12} /> LinkedIn
-                  </a>
-                ) : (
-                  <span className="text-xs text-muted/50">No LinkedIn</span>
-                )}
+              <div className="flex items-center justify-between pt-4 border-t border-white/5 flex-wrap gap-2">
+                <div className="flex items-center gap-3">
+                  {member.linkedin ? (
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-blue-400 hover:text-white transition-colors">
+                      <ExternalLink size={12} /> LinkedIn
+                    </a>
+                  ) : (
+                    <span className="text-xs text-muted/50">No LinkedIn</span>
+                  )}
+                  {member.github && (
+                    <a href={member.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-white/80 hover:text-white transition-colors">
+                      <ExternalLink size={12} /> GitHub
+                    </a>
+                  )}
+                </div>
                 
                 <div className="flex gap-2">
                   <button onClick={() => { setEditingId(member.id); setShowForm(true); }} className="p-2 hover:bg-white/10 rounded-lg text-muted hover:text-white transition-colors">

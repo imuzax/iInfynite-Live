@@ -40,6 +40,7 @@ model TeamMember {
   bio       String? @db.Text
   photoUrl  String  @db.Text
   linkedin  String?
+  github    String?
   isFounder Boolean @default(false)
 }
 
