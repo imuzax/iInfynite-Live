@@ -60,6 +60,7 @@ async function main() {
       bio: "Visionary tech leader with 8+ years of experience building high-ticket enterprise SaaS, AI automation pipelines, and scalable cloud architectures.",
       photoUrl: "/team/founder.jpg",
       linkedin: "https://linkedin.com/in/muzammil-shaikh",
+      github: "https://github.com/imuzax",
       isFounder: true,
     },
     {
