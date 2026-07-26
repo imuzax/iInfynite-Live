@@ -110,16 +110,16 @@ export default async function AboutPage() {
                         </div>
                       </div>
                       <div className="md:col-span-7">
-                        <div className="inline-block px-4 py-1.5 rounded-full bg-accent text-black text-xs font-bold mb-6 tracking-widest uppercase">
+                        <div className="inline-block px-3 py-1 rounded-full bg-accent text-black text-xs font-bold mb-4 tracking-widest uppercase">
                           Founder
                         </div>
-                        <h3 className="text-3xl md:text-5xl font-bold mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-2" style={{ fontFamily: "var(--font-heading)" }}>
                           {founder.name}
                         </h3>
-                        <p className="text-xl text-accent mb-6 font-medium">{founder.role}</p>
+                        <p className="text-base text-accent mb-4 font-medium">{founder.role}</p>
                         
                         {founder.bio && (
-                          <div className="prose prose-invert prose-p:text-muted prose-p:leading-relaxed mb-8 whitespace-pre-wrap text-lg">
+                          <div className="prose prose-invert prose-p:text-muted prose-p:leading-relaxed mb-6 whitespace-pre-wrap text-sm md:text-base">
                             {founder.bio}
                           </div>
                         )}

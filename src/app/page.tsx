@@ -81,7 +81,7 @@ export default function HomePage() {
 
           <FadeIn delay={0.1}>
             <h1
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6 max-w-5xl mx-auto text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6 max-w-4xl mx-auto text-white"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               We Build Software That <span className="gradient-text">Grows Businesses.</span>
@@ -284,7 +284,7 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-xs font-semibold text-white mb-4 uppercase tracking-wider">
                 <Sparkles size={14} className="text-yellow-400" /> Proven Industry Blueprints
               </div>
-              <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
                 Why Start From Scratch When We Already Have Your Blueprint?
               </h2>
               <p className="text-base sm:text-lg text-white/70 leading-relaxed font-light">
@@ -489,7 +489,7 @@ export default function HomePage() {
                   <MapPin size={14} className="text-red-400" /> Pune Camp HQ 🇮🇳 • Global Clients
                 </div>
                 <h2
-                  className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   Ready to Turn Your Vision Into a <span className="gradient-text">Market Leader?</span>

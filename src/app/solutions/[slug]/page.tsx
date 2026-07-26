@@ -66,7 +66,7 @@ export default async function SolutionDetailPage(props: PageProps) {
               </span>
             </div>
             <h1
-              className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-tight max-w-4xl"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-tight max-w-4xl"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {solution.title}
