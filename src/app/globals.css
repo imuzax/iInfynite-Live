@@ -179,12 +179,13 @@ h1, h2, h3, h4, h5, h6 {
       0 0 40px rgba(59, 130, 246, 0.05);
   }
 
-  /* Container */
+  /* Container - use explicit left/right padding so top/bottom utility padding is never reset to 0 */
   .container-main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   /* Section spacing - Reduced by 20% to prevent excessive empty space on laptops */
