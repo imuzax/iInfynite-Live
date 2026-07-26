@@ -66,7 +66,7 @@ export function Footer() {
                   className="text-2xl font-bold tracking-tight text-white"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  iInfynite
+                  iINFYNITE
                 </span>
               </Link>
               
@@ -119,7 +119,7 @@ export function Footer() {
         {/* Bottom Copyright Bar - Standard Normal 56px Top Margin */}
         <div className="mt-12 md:mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-center md:text-left">
-            <span>© {new Date().getFullYear()} iInfynite. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} iINFYNITE. All rights reserved.</span>
             <span className="hidden sm:inline text-white/20">•</span>
             <span>Engineered for Revenue Growth in Pune 🇮🇳</span>
           </div>
