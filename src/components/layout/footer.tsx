@@ -48,19 +48,19 @@ export function Footer() {
 
   return (
     <footer className="relative z-10 border-t border-white/10 bg-[#050507] text-white overflow-hidden">
-      {/* Subtle Ambient Glow - Clean & Calm */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-blue-600/[0.03] rounded-full blur-[150px] pointer-events-none" />
+      {/* Subtle Ambient Glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/[0.04] rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Massive, Luxurious Vertical Breathing Room (pt-36 = 144px top gap, pb-28 = 112px bottom gap) */}
-      <div className="container-main pt-24 md:pt-32 lg:pt-36 pb-20 md:pb-24 lg:pb-28 relative z-10">
+      {/* Massive, Unmistakable Enterprise Breathing Room (200px Top Gap, 160px Bottom Gap on Desktop) */}
+      <div className="container-main pt-[100px] md:pt-[160px] lg:pt-[200px] pb-[100px] md:pb-[140px] lg:pb-[160px] relative z-10">
         
-        {/* Perfectly Balanced 5-Column Grid (Brand takes 2 cols, 3 Link columns take 1 col each) */}
+        {/* Balanced 5-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-10 items-start">
           
           {/* Column 1 & 2: Brand & Contact Info (2 cols on desktop = 40% width) */}
-          <div className="lg:col-span-2 flex flex-col justify-between space-y-8 lg:pr-10">
+          <div className="lg:col-span-2 flex flex-col justify-between space-y-8 lg:pr-12">
             <div className="space-y-5">
-              <Link href="/" className="flex items-center gap-2.5 group w-fit">
+              <Link href="/" className="flex items-center gap-3 group w-fit">
                 <Logo className="h-8 w-auto text-white opacity-95 group-hover:opacity-100 transition-opacity" />
                 <span
                   className="text-3xl font-bold tracking-tight text-white"
@@ -75,7 +75,7 @@ export function Footer() {
               </p>
             </div>
 
-            <div className="space-y-3.5 pt-2 text-sm text-white/70">
+            <div className="space-y-4 pt-2 text-sm text-white/70">
               <div className="flex items-center gap-3">
                 <MapPin size={16} className="text-red-400 shrink-0" />
                 <span>Pune Camp, Pune, Maharashtra 🇮🇳</span>
@@ -91,11 +91,11 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Columns 3, 4, 5: Link Columns (1 col each on desktop = 20% width each, equal spacing!) */}
+          {/* Columns 3, 4, 5: Link Columns */}
           {footerLinks.map((column) => (
             <div key={column.title} className="lg:col-span-1 flex flex-col">
               <h4
-                className="text-base font-semibold text-white tracking-wide mb-6"
+                className="text-base font-semibold text-white tracking-wide mb-7"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {column.title}
@@ -116,8 +116,8 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom Copyright & Guarantee Bar - Generous 96px top margin for breathing room */}
-        <div className="mt-20 md:mt-24 pt-10 md:pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs md:text-sm text-white/50">
+        {/* Bottom Copyright Bar - 120px Top Margin above divider line */}
+        <div className="mt-[80px] md:mt-[120px] pt-[40px] md:pt-[50px] border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs md:text-sm text-white/50">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-center md:text-left">
             <span>© {new Date().getFullYear()} iInfynite. All rights reserved.</span>
             <span className="hidden sm:inline text-white/20">•</span>
