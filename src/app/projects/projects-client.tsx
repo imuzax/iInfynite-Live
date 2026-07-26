@@ -13,6 +13,7 @@ interface Project {
   category: string;
   description: string;
   imageUrl: string;
+  liveUrl?: string | null;
 }
 
 export function ProjectsClient({ projects }: { projects: Project[] }) {
@@ -51,8 +52,8 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
         {filtered.map((project, index) => (
           <FadeIn key={project.slug} delay={index * 0.1}>
             <Link href={`/projects/${project.slug}`}>
-              <GlassCard className="group cursor-pointer h-full">
-                <div className="h-48 rounded-xl bg-glass-bg border border-white/5 overflow-hidden mb-5 relative group-hover:border-white/10 transition-colors">
+              <GlassCard className="group cursor-pointer h-full flex flex-col">
+                <div className="h-48 rounded-xl bg-glass-bg border border-white/5 overflow-hidden mb-5 relative group-hover:border-white/10 transition-colors shrink-0">
                   {project.imageUrl && project.imageUrl !== "/placeholder.png" ? (
                     <img 
                       src={project.imageUrl} 
@@ -76,12 +77,25 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
                 >
                   {project.title}
                 </h3>
-                <p className="text-muted text-sm leading-relaxed mb-3">
+                <p className="text-muted text-sm leading-relaxed mb-4 flex-grow">
                   {project.description}
                 </p>
-                <div className="flex items-center gap-1 text-sm text-muted group-hover:text-accent transition-colors">
-                  View Details
-                  <ExternalLink size={14} />
+                <div className="flex items-center justify-between pt-3 border-t border-white/5 mt-auto">
+                  <div className="flex items-center gap-1 text-sm text-muted group-hover:text-accent transition-colors">
+                    View Details
+                    <ExternalLink size={14} />
+                  </div>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="px-3 py-1.5 rounded-lg bg-accent text-black text-xs font-semibold hover:bg-accent/90 transition-all shadow-md shadow-accent/10 flex items-center gap-1.5 z-10"
+                    >
+                      🚀 Live Site
+                    </a>
+                  )}
                 </div>
               </GlassCard>
             </Link>
