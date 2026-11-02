@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npx prisma generate && npx prisma db push --accept-data-loss && npx prisma db seed && next build",
+    "clean": "rm -rf .next tsconfig.tsbuildinfo",
     "start": "next start",
     "lint": "eslint",
     "db:push": "npx prisma db push",
