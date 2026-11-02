@@ -53,13 +53,19 @@ export function Navbar() {
               : "py-4 bg-transparent border-transparent rounded-2xl"
           }`}
         >
-            {/* Logo */}
+            {/* Logo & Brand Name */}
             <Link 
               href="/" 
-              className="flex items-center group relative z-50"
+              className="flex items-center gap-2.5 group relative z-50"
               onClick={() => setMobileOpen(false)}
             >
               <Logo className="h-7 md:h-8 w-auto text-slate-900 opacity-95 hover:opacity-100 transition-opacity" />
+              <span
+                className="text-xl font-bold tracking-tight text-slate-900"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                iINFYNITE
+              </span>
             </Link>
 
             {/* Desktop Nav Links */}

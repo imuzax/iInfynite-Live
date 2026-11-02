@@ -18,29 +18,34 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "iInfynite — Freelance IT Agency | Web, App, Design & Growth",
-    template: "%s | iInfynite",
+    default: "iINFYNITE — Full-Service Digital Agency | Web, Mobile, AI & Custom Software",
+    template: "%s | iINFYNITE",
   },
   description:
-    "iInfynite is a premium freelance IT agency offering web development, app development, graphic design, startup acceleration, digital growth, and custom software solutions.",
+    "iINFYNITE is a premium full-service digital agency. We design and engineer high-performance websites, mobile applications, custom SaaS platforms, AI automation systems, and brand identities that scale businesses.",
   keywords: [
-    "web development",
-    "app development",
+    "digital agency",
+    "web development agency",
+    "mobile app development",
+    "UI/UX design agency",
     "graphic design",
+    "branding and identity",
+    "custom software development",
+    "SaaS development",
+    "e-commerce development",
+    "AI automation",
     "startup acceleration",
-    "digital growth",
-    "custom software",
-    "freelance IT agency",
-    "iInfynite",
+    "Pune digital agency",
+    "iINFYNITE",
   ],
-  authors: [{ name: "iInfynite" }],
+  authors: [{ name: "iINFYNITE" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "iInfynite",
-    title: "iInfynite — Freelance IT Agency",
+    siteName: "iINFYNITE",
+    title: "iINFYNITE — Full-Service Digital Agency",
     description:
-      "Premium IT services: Web Dev, App Dev, Graphic Design, Startup Acceleration, Digital Growth & Custom Software.",
+      "We build high-performance websites, mobile apps, enterprise SaaS, AI automation, and bespoke software solutions that drive measurable business growth.",
   },
 };
 
