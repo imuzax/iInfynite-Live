@@ -64,24 +64,24 @@ export default function HomePage() {
   const topSolutions = solutionsData.slice(0, 3);
 
   return (
-    <div className="relative overflow-hidden bg-[#050507]">
+    <div className="relative overflow-hidden bg-white text-slate-900">
       {/* ====== 1. AUTHORITATIVE HERO SECTION ====== */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-20 md:pt-32 md:pb-24">
         {/* Subtle, calm ambient background glow - Zero eye fatigue */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-600/[0.07] rounded-full blur-[150px] pointer-events-none -z-10" />
-        <div className="absolute bottom-10 right-1/4 w-[500px] h-[400px] bg-emerald-600/[0.05] rounded-full blur-[140px] pointer-events-none -z-10" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-500/[0.05] rounded-full blur-[150px] pointer-events-none -z-10" />
+        <div className="absolute bottom-10 right-1/4 w-[500px] h-[400px] bg-indigo-500/[0.04] rounded-full blur-[140px] pointer-events-none -z-10" />
 
         <div className="container-main text-center relative z-10 px-4">
           <FadeIn>
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/15 bg-white/[0.04] text-xs sm:text-sm font-medium text-white/90 mb-8 shadow-sm">
-              <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium text-slate-800 mb-8 shadow-xs">
+              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>We Don&apos;t Build Portfolios. We Build Revenue Engines.</span>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.1}>
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6 max-w-4xl mx-auto text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6 max-w-4xl mx-auto text-slate-900"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               We Build Software That <span className="gradient-text">Grows Businesses.</span>
@@ -90,18 +90,18 @@ export default function HomePage() {
 
           <FadeIn delay={0.2}>
             {/* Clean, authoritative service category pill bar */}
-            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs sm:text-sm font-semibold text-white/80 max-w-3xl mx-auto mb-6 uppercase tracking-wider font-mono">
-              <span className="px-3 py-1 rounded bg-white/[0.06] border border-white/10">Websites</span>
-              <span className="text-white/30">•</span>
-              <span className="px-3 py-1 rounded bg-white/[0.06] border border-white/10">Mobile Apps</span>
-              <span className="text-white/30">•</span>
-              <span className="px-3 py-1 rounded bg-white/[0.06] border border-white/10">AI Automation</span>
-              <span className="text-white/30">•</span>
-              <span className="px-3 py-1 rounded bg-white/[0.06] border border-white/10">SaaS</span>
-              <span className="text-white/30">•</span>
-              <span className="px-3 py-1 rounded bg-white/[0.06] border border-white/10">Custom Software</span>
+            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs sm:text-sm font-semibold text-slate-700 max-w-3xl mx-auto mb-6 uppercase tracking-wider font-mono">
+              <span className="px-3 py-1 rounded-md bg-slate-100 border border-slate-200">Websites</span>
+              <span className="text-slate-300">•</span>
+              <span className="px-3 py-1 rounded-md bg-slate-100 border border-slate-200">Mobile Apps</span>
+              <span className="text-slate-300">•</span>
+              <span className="px-3 py-1 rounded-md bg-slate-100 border border-slate-200">AI Automation</span>
+              <span className="text-slate-300">•</span>
+              <span className="px-3 py-1 rounded-md bg-slate-100 border border-slate-200">SaaS</span>
+              <span className="text-slate-300">•</span>
+              <span className="px-3 py-1 rounded-md bg-slate-100 border border-slate-200">Custom Software</span>
             </div>
-            <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
               Clients don&apos;t care about complex technical jargon; they care if you can solve their operational bottlenecks and drive sales. We architect high-converting digital platforms and automated systems engineered for speed, reliability, and measurable ROI.
             </p>
           </FadeIn>
@@ -110,62 +110,62 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto mb-16">
               <Link
                 href="/contact"
-                className="btn-primary text-sm sm:text-base px-9 py-4 rounded-full bg-white text-black font-semibold hover:bg-white/90 w-full sm:w-auto shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all duration-200 flex items-center justify-center gap-2"
+                className="btn-primary text-sm sm:text-base px-9 py-4 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 w-full sm:w-auto shadow-md transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <span>Book Free Consultation</span>
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href="/projects"
-                className="btn-secondary text-sm sm:text-base px-8 py-4 rounded-full w-full sm:w-auto hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-2"
+                className="btn-secondary text-sm sm:text-base px-8 py-4 rounded-full w-full sm:w-auto bg-white border-slate-200 text-slate-800 hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 flex items-center justify-center gap-2 shadow-xs"
               >
                 <span>View Case Studies</span>
-                <ExternalLink size={14} className="text-white/60" />
+                <ExternalLink size={14} className="text-slate-500" />
               </Link>
             </div>
           </FadeIn>
 
           {/* Stable, Clean Business Impact Summary Dashboard */}
           <FadeIn delay={0.4}>
-            <div className="max-w-4xl mx-auto p-6 sm:p-8 rounded-3xl bg-[#0a0a0d] border border-white/15 shadow-2xl relative text-left">
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-white/10 pb-6 mb-6">
+            <div className="max-w-4xl mx-auto p-6 sm:p-8 rounded-3xl bg-slate-50/80 border border-slate-200/90 shadow-xl shadow-slate-200/50 relative text-left">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-200 pb-6 mb-6">
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold mb-1 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> Live Client Value Guarantee
+                  <div className="text-xs font-mono uppercase tracking-widest text-emerald-600 font-semibold mb-1 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Live Client Value Guarantee
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">Engineered For Real Business Growth</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900">Engineered For Real Business Growth</h3>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-white/60 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
-                  <MapPin size={14} className="text-red-400" /> Pune Camp HQ 🇮🇳 • Global Standards
+                <div className="flex items-center gap-2 text-xs font-medium text-slate-600 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-xs">
+                  <MapPin size={14} className="text-red-500" /> Pune Camp HQ 🇮🇳 • Global Standards
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div className="p-5 rounded-2xl bg-[#111116] border border-white/5 flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-3 text-white/50">
+                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-3 text-slate-500">
                     <span className="text-xs font-semibold uppercase font-mono">Conversion Speed</span>
-                    <Zap size={16} className="text-yellow-400" />
+                    <Zap size={16} className="text-amber-500" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">&lt; 0.8s Load</div>
-                  <p className="text-xs text-white/60 leading-relaxed">Lightning fast pages that rank #1 on Google and turn visitors into buyers.</p>
+                  <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">&lt; 0.8s Load</div>
+                  <p className="text-xs text-slate-600 leading-relaxed">Lightning fast pages that rank #1 on Google and turn visitors into buyers.</p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#111116] border border-white/5 flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-3 text-white/50">
+                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-3 text-slate-500">
                     <span className="text-xs font-semibold uppercase font-mono">Manual Labor Saved</span>
-                    <Bot size={16} className="text-emerald-400" />
+                    <Bot size={16} className="text-emerald-600" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">20+ Hrs/Wk</div>
-                  <p className="text-xs text-white/60 leading-relaxed">AI chatbots and custom workflow automation handle repetitive daily tasks 24/7.</p>
+                  <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">20+ Hrs/Wk</div>
+                  <p className="text-xs text-slate-600 leading-relaxed">AI chatbots and custom workflow automation handle repetitive daily tasks 24/7.</p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#111116] border border-white/5 flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-3 text-white/50">
+                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-3 text-slate-500">
                     <span className="text-xs font-semibold uppercase font-mono">Code Ownership</span>
-                    <ShieldCheck size={16} className="text-blue-400" />
+                    <ShieldCheck size={16} className="text-blue-600" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">100% Client Owns</div>
-                  <p className="text-xs text-white/60 leading-relaxed">Zero vendor lock-in. Full source code and IP rights transferred upon completion.</p>
+                  <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">100% Client Owns</div>
+                  <p className="text-xs text-slate-600 leading-relaxed">Zero vendor lock-in. Full source code and IP rights transferred upon completion.</p>
                 </div>
               </div>
             </div>
@@ -174,23 +174,23 @@ export default function HomePage() {
       </section>
 
       {/* ====== 2. CLEAN TRUST & SECURITY RIBBON ====== */}
-      <section className="py-10 border-y border-white/10 bg-[#07070a]">
+      <section className="py-10 border-y border-slate-200 bg-slate-50/70">
         <div className="container-main">
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-center text-xs sm:text-sm font-semibold text-white/80">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-center text-xs sm:text-sm font-semibold text-slate-700">
             <div className="flex items-center gap-2.5">
-              <CheckCircle2 size={18} className="text-emerald-400 shrink-0" />
+              <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
               <span>100% IP & Source Code Ownership</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <Lock size={18} className="text-blue-400 shrink-0" />
+              <Lock size={18} className="text-blue-600 shrink-0" />
               <span>Strict NDA Confidentiality</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <Clock size={18} className="text-yellow-400 shrink-0" />
+              <Clock size={18} className="text-amber-600 shrink-0" />
               <span>Rapid Agile Sprints (2–4 Weeks)</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <Award size={18} className="text-purple-400 shrink-0" />
+              <Award size={18} className="text-purple-600 shrink-0" />
               <span>Dedicated 24/7 Technical Support SLA</span>
             </div>
           </div>
@@ -245,27 +245,27 @@ export default function HomePage() {
               }
             ].map((srv, idx) => (
               <FadeIn key={srv.title} delay={idx * 0.08}>
-                <div className="p-7 rounded-3xl bg-[#0c0c10] border border-white/10 hover:border-white/25 hover:bg-[#111116] transition-all duration-300 flex flex-col h-full group">
+                <div className="p-7 rounded-3xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 flex flex-col h-full group shadow-xs">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-200 shadow-sm">
-                      <srv.icon size={22} className="text-white/80 group-hover:text-white transition-colors" />
+                    <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center group-hover:bg-blue-100/80 transition-all duration-200 shadow-xs">
+                      <srv.icon size={22} className="text-blue-600 transition-colors" />
                     </div>
-                    <span className="text-[11px] font-semibold uppercase px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                    <span className="text-[11px] font-semibold uppercase px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700">
                       {srv.outcome}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors leading-snug">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors leading-snug">
                     {srv.title}
                   </h3>
 
-                  <p className="text-sm text-white/60 leading-relaxed mb-8 flex-1">
+                  <p className="text-sm text-slate-600 leading-relaxed mb-8 flex-1">
                     {srv.desc}
                   </p>
 
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-white/70 group-hover:text-white mt-auto transition-colors">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-700 group-hover:text-blue-600 mt-auto transition-colors">
                     <span>Learn How We Implement This</span>
-                    <ArrowRight size={16} className="text-blue-400 transition-colors" />
+                    <ArrowRight size={16} className="text-blue-600 transition-colors" />
                   </div>
                 </div>
               </FadeIn>
@@ -275,19 +275,19 @@ export default function HomePage() {
       </section>
 
       {/* ====== 4. THE 100+ READY SOLUTIONS ENGINE (STABLE CENTERPIECE) ====== */}
-      <section className="py-16 md:py-24 border-y border-white/10 bg-[#08080c] relative">
+      <section className="py-16 md:py-24 border-y border-slate-200 bg-slate-50/50 relative">
         <div className="container-main">
-          <div className="p-8 sm:p-12 md:p-16 rounded-3xl bg-gradient-to-b from-[#111118] to-[#0a0a0f] border border-white/15 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/[0.06] rounded-full blur-[140px] pointer-events-none" />
+          <div className="p-8 sm:p-12 md:p-16 rounded-3xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/[0.04] rounded-full blur-[140px] pointer-events-none" />
 
             <div className="max-w-3xl mb-12">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-xs font-semibold text-white mb-4 uppercase tracking-wider">
-                <Sparkles size={14} className="text-yellow-400" /> Proven Industry Blueprints
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-800 mb-4 uppercase tracking-wider">
+                <Sparkles size={14} className="text-amber-500" /> Proven Industry Blueprints
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
                 Why Start From Scratch When We Already Have Your Blueprint?
               </h2>
-              <p className="text-base sm:text-lg text-white/70 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
                 Don&apos;t risk your budget on unproven experiments. We have engineered over 100 ready-to-deploy software architectures across 10 major industries. We take these proven frameworks and customize them 100% to your unique business workflow.
               </p>
             </div>
@@ -298,30 +298,30 @@ export default function HomePage() {
                 <Link
                   key={sol.slug}
                   href={`/solutions/${sol.slug}`}
-                  className="p-6 rounded-2xl bg-[#0c0c12] border border-white/10 hover:border-white/30 transition-all flex flex-col group"
+                  className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex flex-col group shadow-xs"
                 >
-                  <div className="text-xs font-mono uppercase text-blue-400 font-semibold mb-2">{sol.industry}</div>
-                  <h4 className="text-lg font-bold text-white mb-2 group-hover:text-white transition-colors">{sol.title}</h4>
-                  <p className="text-xs text-white/60 line-clamp-2 mb-6 flex-1 leading-relaxed">{sol.shortDescription}</p>
-                  <div className="flex items-center justify-between text-xs font-semibold text-white/70 pt-3 border-t border-white/10 group-hover:text-white transition-colors">
+                  <div className="text-xs font-mono uppercase text-blue-600 font-semibold mb-2">{sol.industry}</div>
+                  <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{sol.title}</h4>
+                  <p className="text-xs text-slate-600 line-clamp-2 mb-6 flex-1 leading-relaxed">{sol.shortDescription}</p>
+                  <div className="flex items-center justify-between text-xs font-semibold text-slate-700 pt-3 border-t border-slate-100 group-hover:text-blue-600 transition-colors">
                     <span>View Blueprint</span>
-                    <ArrowUpRight size={14} className="text-blue-400 transition-colors" />
+                    <ArrowUpRight size={14} className="text-blue-600 transition-colors" />
                   </div>
                 </Link>
               ))}
             </div>
 
-            {/* Elegant Industry Pill Tag Cloud (Replacing Emojis) */}
-            <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            {/* Elegant Industry Pill Tag Cloud */}
+            <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div>
-                <div className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-3 font-mono">Deep Expertise Across 10 Major Industries:</div>
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3 font-mono">Deep Expertise Across 10 Major Industries:</div>
                 <div className="flex flex-wrap gap-2">
                   {[
                     "Healthcare & Clinics", "E-Commerce & Retail", "AI & Workflow Automation",
                     "SaaS Platforms", "Real Estate & Solar", "ERP & Business Ops",
                     "FinTech & Billing", "Logistics & Supply Chain", "Hospitality & Travel", "Education & EdTech"
                   ].map((ind) => (
-                    <span key={ind} className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-white/80">
+                    <span key={ind} className="px-3 py-1 rounded-lg bg-white border border-slate-200 text-xs font-medium text-slate-700 shadow-xs">
                       {ind}
                     </span>
                   ))}
@@ -331,7 +331,7 @@ export default function HomePage() {
               <div className="shrink-0">
                 <Link
                   href="/solutions"
-                  className="btn-primary text-sm px-7 py-3.5 rounded-full bg-white text-black font-semibold hover:bg-white/90 inline-flex items-center gap-2 shadow-lg whitespace-nowrap"
+                  className="btn-primary text-sm px-7 py-3.5 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 inline-flex items-center gap-2 shadow-md whitespace-nowrap"
                 >
                   <span>Explore All 100+ Solutions</span>
                   <ArrowRight size={16} />
@@ -374,14 +374,14 @@ export default function HomePage() {
               }
             ].map((st, idx) => (
               <FadeIn key={st.step} delay={idx * 0.1}>
-                <div className="p-7 rounded-3xl bg-[#0b0b0e] border border-white/10 flex flex-col h-full relative overflow-hidden group hover:border-white/20 transition-all duration-200">
-                  <div className="text-4xl font-bold font-mono text-white/15 mb-6 group-hover:text-white/30 transition-colors">
+                <div className="p-7 rounded-3xl bg-white border border-slate-200 flex flex-col h-full relative overflow-hidden group hover:border-slate-300 transition-all duration-200 shadow-xs">
+                  <div className="text-4xl font-bold font-mono text-slate-200 mb-6 group-hover:text-slate-300 transition-colors">
                     {st.step}
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-white">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
                     {st.title}
                   </h3>
-                  <p className="text-sm text-white/60 leading-relaxed flex-1">
+                  <p className="text-sm text-slate-600 leading-relaxed flex-1">
                     {st.desc}
                   </p>
                 </div>
@@ -392,7 +392,7 @@ export default function HomePage() {
       </section>
 
       {/* ====== 6. WHY BRANDS TRUST IINFYNITE (CLEAN 4-PILLAR STRUCTURE) ====== */}
-      <section className="py-16 md:py-24 border-y border-white/10 bg-[#07070a]">
+      <section className="py-16 md:py-24 border-y border-slate-200 bg-slate-50/50">
         <div className="container-main">
           <SectionHeading
             title="Why Leading Founders Partner With iInfynite"
@@ -424,13 +424,13 @@ export default function HomePage() {
             ].map((pillar, i) => (
               <FadeIn key={pillar.title} delay={i * 0.08}>
                 <div className="flex flex-col h-full">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-white/90">
-                    <pillar.icon size={22} className="text-blue-400" />
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 text-blue-600 shadow-xs">
+                    <pillar.icon size={22} className="text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-white/60 leading-relaxed flex-1">
+                  <p className="text-sm text-slate-600 leading-relaxed flex-1">
                     {pillar.desc}
                   </p>
                 </div>
@@ -455,18 +455,18 @@ export default function HomePage() {
                 <FadeIn key={idx} delay={idx * 0.06}>
                   <div
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="p-6 sm:p-7 rounded-2xl bg-[#0b0b0f] border border-white/10 hover:border-white/20 cursor-pointer transition-all duration-200"
+                    className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer transition-all duration-200 shadow-xs"
                   >
                     <div className="flex items-center justify-between gap-4">
-                      <h3 className="text-base sm:text-lg font-bold text-white">
+                      <h3 className="text-base sm:text-lg font-bold text-slate-900">
                         {item.q}
                       </h3>
-                      <div className={`w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 bg-white text-black" : "text-white/60"}`}>
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 bg-slate-900 text-white" : "bg-slate-100 text-slate-600"}`}>
                         <ChevronDown size={16} />
                       </div>
                     </div>
                     {isOpen && (
-                      <div className="mt-4 pt-4 border-t border-white/10 text-sm sm:text-base text-white/70 leading-relaxed font-light">
+                      <div className="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                         {item.a}
                       </div>
                     )}
@@ -480,28 +480,28 @@ export default function HomePage() {
 
       {/* ====== 8. HIGH-CONVERTING CONTACT CTA SECTION (PUNE CAMP HQ) ====== */}
       <section className="py-20 md:py-28 relative overflow-hidden" id="contact">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-blue-600/[0.08] rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-blue-500/[0.06] rounded-full blur-[150px] pointer-events-none" />
         <div className="container-main relative z-10">
           <FadeIn>
-            <div className="p-8 sm:p-14 md:p-16 rounded-3xl bg-gradient-to-b from-[#101016] via-[#0c0c10] to-[#101016] border border-white/20 shadow-2xl text-center relative overflow-hidden">
+            <div className="p-8 sm:p-14 md:p-16 rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-slate-800 shadow-2xl text-center relative overflow-hidden text-white">
               <div className="max-w-3xl mx-auto relative z-10">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold text-white mb-6 uppercase tracking-wider font-mono">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold text-slate-200 mb-6 uppercase tracking-wider font-mono border border-white/10">
                   <MapPin size={14} className="text-red-400" /> Pune Camp HQ 🇮🇳 • Global Clients
                 </div>
                 <h2
                   className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  Ready to Turn Your Vision Into a <span className="gradient-text">Market Leader?</span>
+                  Ready to Turn Your Vision Into a <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Market Leader?</span>
                 </h2>
-                <p className="text-base sm:text-lg text-white/70 mb-10 leading-relaxed font-light">
+                <p className="text-base sm:text-lg text-slate-300 mb-10 leading-relaxed font-normal">
                   Whether you need a high-converting website, a custom mobile app, or an autonomous AI workflow, let&apos;s schedule a 30-minute technical consultation. Zero obligation, zero technical jargon—just honest engineering advice.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                   <Link
                     href="/contact"
-                    className="btn-primary text-base px-10 py-4 rounded-full bg-white text-black font-semibold hover:bg-white/90 w-full sm:w-auto shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
+                    className="btn-primary text-base px-10 py-4 rounded-full bg-white text-slate-950 font-semibold hover:bg-slate-100 w-full sm:w-auto shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
                   >
                     <span>Schedule Free Technical Call</span>
                     <ArrowRight size={18} />
@@ -510,13 +510,13 @@ export default function HomePage() {
                     href="https://wa.me/919588617714?text=Hi%2C%20I%20visited%20your%20website%20and%20am%20interested%20in%20discussing%20a%20project."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#18181f] hover:bg-[#22222a] border border-white/15 text-white font-medium text-center flex items-center justify-center gap-2 text-sm transition-all shadow-lg"
+                    className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium text-center flex items-center justify-center gap-2 text-sm transition-all shadow-lg"
                   >
-                    <MessageSquare size={16} className="text-green-400" /> Chat on WhatsApp Now
+                    <MessageSquare size={16} className="text-emerald-400" /> Chat on WhatsApp Now
                   </a>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 pt-8 border-t border-white/10 text-xs sm:text-sm text-white/60">
+                <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 pt-8 border-t border-slate-800 text-xs sm:text-sm text-slate-400">
                   <span className="flex items-center gap-2"><MapPin size={16} className="text-blue-400" /> Pune Camp, Pune, MH 🇮🇳</span>
                   <span className="flex items-center gap-2"><Mail size={16} className="text-blue-400" /> iinfynite0@gmail.com</span>
                   <span className="flex items-center gap-2"><Phone size={16} className="text-emerald-400" /> +91 95886 17714</span>

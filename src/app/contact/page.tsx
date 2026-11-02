@@ -92,46 +92,46 @@ export default function ContactPage() {
                           name="inquiryType"
                           required
                           defaultValue=""
-                          className="input-glass bg-[#0a0a0a] w-full cursor-pointer appearance-none"
+                          className="input-glass bg-white text-slate-900 w-full cursor-pointer appearance-none"
                           style={{
                             backgroundImage:
-                              'url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23ffffff\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6 9 12 15 18 9\'/%3e%3c/svg%3e")',
+                              'url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%230f172a\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6 9 12 15 18 9\'/%3e%3c/svg%3e")',
                             backgroundRepeat: "no-repeat",
                             backgroundPosition: "right 1rem center",
                             backgroundSize: "1.2em",
                           }}
                         >
-                          <option value="" disabled className="bg-[#0a0a0a] text-muted">
+                          <option value="" disabled className="bg-white text-slate-400">
                             Select an Industry / Service Type...
                           </option>
-                          <option value="Startup MVP & Acceleration" className="bg-[#0a0a0a] text-white">
+                          <option value="Startup MVP & Acceleration" className="bg-white text-slate-900">
                             🚀 Startup MVP & Acceleration (From Idea to Launch)
                           </option>
-                          <option value="Web & Mobile App Development" className="bg-[#0a0a0a] text-white">
+                          <option value="Web & Mobile App Development" className="bg-white text-slate-900">
                             📱 Web & Mobile App Development (iOS, Android, SaaS)
                           </option>
-                          <option value="AI & Automation Solutions" className="bg-[#0a0a0a] text-white">
+                          <option value="AI & Automation Solutions" className="bg-white text-slate-900">
                             🤖 AI & Automation Solutions (LLMs, Custom Agents, ATS)
                           </option>
-                          <option value="Affiliate Landing Pages & Marketing" className="bg-[#0a0a0a] text-white">
+                          <option value="Affiliate Landing Pages & Marketing" className="bg-white text-slate-900">
                             🎯 Affiliate Landing Pages & Marketing (High-Conversion Funnels)
                           </option>
-                          <option value="EdTech & Education Systems" className="bg-[#0a0a0a] text-white">
+                          <option value="EdTech & Education Systems" className="bg-white text-slate-900">
                             🎓 EdTech & Education Systems (LMS, Student & Faculty Portals)
                           </option>
-                          <option value="Healthcare & Medical Tech" className="bg-[#0a0a0a] text-white">
+                          <option value="Healthcare & Medical Tech" className="bg-white text-slate-900">
                             🏥 Healthcare & Medical Tech (HIPAA/GDPR Compliant Systems)
                           </option>
-                          <option value="E-Commerce & Retail Platforms" className="bg-[#0a0a0a] text-white">
+                          <option value="E-Commerce & Retail Platforms" className="bg-white text-slate-900">
                             🛍️ E-Commerce & Retail Platforms (Custom Storefronts, API Integrations)
                           </option>
-                          <option value="Green Energy & Sustainability" className="bg-[#0a0a0a] text-white">
+                          <option value="Green Energy & Sustainability" className="bg-white text-slate-900">
                             🌱 Green Energy & Sustainability (Solar ROI Calculators, Clean Tech)
                           </option>
-                          <option value="Custom Software / Enterprise IT" className="bg-[#0a0a0a] text-white">
+                          <option value="Custom Software / Enterprise IT" className="bg-white text-slate-900">
                             ⚙️ Custom Software / Enterprise IT (Cloud Architecture, DevOps)
                           </option>
-                          <option value="Other / Custom Inquiry" className="bg-[#0a0a0a] text-white">
+                          <option value="Other / Custom Inquiry" className="bg-white text-slate-900">
                             ✨ Other / Custom Inquiry
                           </option>
                         </select>
@@ -200,76 +200,76 @@ export default function ContactPage() {
             {/* Contact Info Sidebar */}
             <div className="space-y-6">
               <FadeIn delay={0.2}>
-                <GlassCard hover={false}>
+                <GlassCard hover={false} className="border border-slate-200 bg-white shadow-sm">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                      <Mail size={20} className="text-accent" />
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 text-blue-600 shadow-xs">
+                      <Mail size={20} className="text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold mb-1">Email</h4>
-                      <p className="text-muted text-sm">iinfynite0@gmail.com</p>
+                      <h4 className="text-sm font-semibold mb-1 text-slate-900">Email</h4>
+                      <p className="text-slate-600 text-sm">iinfynite0@gmail.com</p>
                     </div>
                   </div>
                 </GlassCard>
               </FadeIn>
 
               <FadeIn delay={0.3}>
-                <GlassCard hover={false}>
+                <GlassCard hover={false} className="border border-slate-200 bg-white shadow-sm">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                      <Phone size={20} className="text-accent" />
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 text-blue-600 shadow-xs">
+                      <Phone size={20} className="text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold mb-1">Phone</h4>
-                      <p className="text-muted text-sm">9588617714</p>
+                      <h4 className="text-sm font-semibold mb-1 text-slate-900">Phone</h4>
+                      <p className="text-slate-600 text-sm">+91 95886 17714</p>
                     </div>
                   </div>
                 </GlassCard>
               </FadeIn>
 
               <FadeIn delay={0.4}>
-                <GlassCard hover={false}>
+                <GlassCard hover={false} className="border border-slate-200 bg-white shadow-sm">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                      <MapPin size={20} className="text-accent" />
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 text-blue-600 shadow-xs">
+                      <MapPin size={20} className="text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold mb-1">Location</h4>
-                      <p className="text-muted text-sm">Pune Camp</p>
+                      <h4 className="text-sm font-semibold mb-1 text-slate-900">Location</h4>
+                      <p className="text-slate-600 text-sm">Pune Camp, Pune, MH 🇮🇳</p>
                     </div>
                   </div>
                 </GlassCard>
               </FadeIn>
 
               <FadeIn delay={0.45}>
-                <GlassCard hover={false}>
+                <GlassCard hover={false} className="border border-slate-200 bg-white shadow-sm">
                   <div className="flex items-center justify-between gap-3">
                     <a
                       href="https://www.linkedin.com/company/113274914/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/20 text-xs font-semibold text-blue-400 hover:text-white transition-all duration-200"
+                      className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-xs font-semibold text-blue-700 transition-all duration-200 shadow-xs"
                     >
                       <LinkedinIcon size={16} />
-                      <span>LinkedIn Page</span>
+                      <span>LinkedIn</span>
                     </a>
                     <a
                       href="https://github.com/imuzax/iInfynite-Live"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white/[0.05] hover:bg-white/10 border border-white/10 text-xs font-semibold text-white/80 hover:text-white transition-all duration-200"
+                      className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs font-semibold text-slate-800 transition-all duration-200 shadow-xs"
                     >
                       <GithubIcon size={16} />
-                      <span>GitHub Repo</span>
+                      <span>GitHub</span>
                     </a>
                   </div>
                 </GlassCard>
               </FadeIn>
 
               <FadeIn delay={0.5}>
-                <GlassCard hover={false} className="bg-accent/5">
-                  <p className="text-sm text-muted leading-relaxed">
-                    💬 We typically respond within <strong className="text-foreground">24 hours</strong>.
+                <GlassCard hover={false} className="bg-slate-50 border border-slate-200">
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    💬 We typically respond within <strong className="text-slate-900">24 hours</strong>.
                     We look forward to discussing your next big idea!
                   </p>
                 </GlassCard>

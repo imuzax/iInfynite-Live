@@ -185,14 +185,14 @@ export default function AdminTeamPage() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-xl">
+              <div className="flex items-center gap-3 p-4 bg-slate-50 border border-slate-200 rounded-xl">
                 <input 
                   type="checkbox" 
                   id="isFounder" 
                   name="isFounder" 
                   value="true"
                   defaultChecked={editing?.isFounder} 
-                  className="w-5 h-5 rounded border-white/20 bg-black accent-accent"
+                  className="w-5 h-5 rounded border-slate-300 bg-white accent-blue-600"
                 />
                 <label htmlFor="isFounder" className="text-sm font-medium cursor-pointer select-none">
                   Is Founder? (This highlights the member in a special prominent layout on the About page)
@@ -221,56 +221,56 @@ export default function AdminTeamPage() {
           </div>
         ) : (
           members.map((member) => (
-            <div key={member.id} className={`admin-card relative overflow-hidden ${member.isFounder ? 'border-accent/50 bg-accent/5' : ''}`}>
+            <div key={member.id} className={`admin-card relative overflow-hidden ${member.isFounder ? 'border-blue-400 bg-blue-50/20' : ''}`}>
               {member.isFounder && (
-                <div className="absolute top-0 right-0 bg-accent text-black text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1">
+                <div className="absolute top-0 right-0 bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1">
                   <Star size={12} fill="currentColor" /> Founder
                 </div>
               )}
               
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white/5 shrink-0 border border-white/10">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden bg-slate-100 shrink-0 border border-slate-200">
                   {member.photoUrl ? (
                     <img src={member.photoUrl} alt={member.name} className="w-full h-full object-cover" />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center text-xl font-bold text-muted">
+                    <div className="w-full h-full flex items-center justify-center text-xl font-bold text-slate-400">
                       {member.name.charAt(0)}
                     </div>
                   )}
                 </div>
                 <div className="flex-1 min-w-0 pt-1">
-                  <h3 className="font-semibold text-lg truncate" style={{ fontFamily: "var(--font-heading)" }}>{member.name}</h3>
-                  <p className="text-accent text-sm truncate">{member.role}</p>
+                  <h3 className="font-semibold text-lg truncate text-slate-900" style={{ fontFamily: "var(--font-heading)" }}>{member.name}</h3>
+                  <p className="text-blue-600 text-sm truncate font-medium">{member.role}</p>
                 </div>
               </div>
               
               {member.bio && (
-                <p className="text-sm text-muted line-clamp-2 mb-4">
+                <p className="text-sm text-slate-600 line-clamp-2 mb-4">
                   {member.bio}
                 </p>
               )}
 
-              <div className="flex items-center justify-between pt-4 border-t border-white/5 flex-wrap gap-2">
+              <div className="flex items-center justify-between pt-4 border-t border-slate-100 flex-wrap gap-2">
                 <div className="flex items-center gap-3">
                   {member.linkedin ? (
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-blue-400 hover:text-white transition-colors">
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-700 transition-colors">
                       <ExternalLink size={12} /> LinkedIn
                     </a>
                   ) : (
-                    <span className="text-xs text-muted/50">No LinkedIn</span>
+                    <span className="text-xs text-slate-400">No LinkedIn</span>
                   )}
                   {member.github && (
-                    <a href={member.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-white/80 hover:text-white transition-colors">
+                    <a href={member.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-slate-600 hover:text-slate-900 transition-colors">
                       <ExternalLink size={12} /> GitHub
                     </a>
                   )}
                 </div>
                 
                 <div className="flex gap-2">
-                  <button onClick={() => { setEditingId(member.id); setShowForm(true); }} className="p-2 hover:bg-white/10 rounded-lg text-muted hover:text-white transition-colors">
+                  <button onClick={() => { setEditingId(member.id); setShowForm(true); }} className="p-2 hover:bg-slate-100 rounded-lg text-slate-500 hover:text-slate-900 transition-colors cursor-pointer">
                     <Pencil size={14} />
                   </button>
-                  <button onClick={() => handleDelete(member.id)} className="p-2 hover:bg-danger/20 rounded-lg text-muted hover:text-danger transition-colors">
+                  <button onClick={() => handleDelete(member.id)} className="p-2 hover:bg-red-50 rounded-lg text-slate-500 hover:text-red-600 transition-colors cursor-pointer">
                     <Trash2 size={14} />
                   </button>
                 </div>

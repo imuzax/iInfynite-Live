@@ -48,46 +48,46 @@ export function Footer() {
   if (pathname?.startsWith("/admin")) return null;
 
   return (
-    <footer className="relative z-10 border-t border-white/10 bg-[#050507] text-white overflow-hidden">
+    <footer className="relative z-10 border-t border-slate-200 bg-slate-50 text-slate-800 overflow-hidden">
       {/* Subtle Ambient Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-600/[0.03] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-500/[0.04] rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Standard Normal Balanced Spacing (pt-20 = 80px top gap, pb-8 = 32px bottom gap for clean copyright margin) */}
+      {/* Standard Normal Balanced Spacing */}
       <div className="container-main pt-14 md:pt-16 lg:pt-20 pb-6 md:pb-8 relative z-10">
         
         {/* Balanced 5-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 items-start">
           
-          {/* Column 1 & 2: Brand & Contact Info (2 cols on desktop = 40% width) */}
+          {/* Column 1 & 2: Brand & Contact Info */}
           <div className="lg:col-span-2 flex flex-col justify-between space-y-6 lg:pr-10">
             <div className="space-y-4">
               <Link href="/" className="flex items-center gap-2.5 group w-fit">
-                <Logo className="h-7 w-auto text-white opacity-95 group-hover:opacity-100 transition-opacity" />
+                <Logo className="h-7 w-auto text-slate-900 opacity-95 group-hover:opacity-100 transition-opacity" />
                 <span
-                  className="text-2xl font-bold tracking-tight text-white"
+                  className="text-2xl font-bold tracking-tight text-slate-900"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   iINFYNITE
                 </span>
               </Link>
               
-              <p className="text-white/60 text-sm leading-relaxed max-w-sm font-light">
+              <p className="text-slate-600 text-sm leading-relaxed max-w-sm">
                 We build custom software that grows businesses. From high-converting websites and native apps to AI automation and enterprise SaaS, we engineer solutions that drive real revenue.
               </p>
             </div>
 
-            <div className="space-y-3 pt-2 text-sm text-white/70">
+            <div className="space-y-3 pt-2 text-sm text-slate-700">
               <div className="flex items-center gap-2.5">
-                <MapPin size={15} className="text-red-400 shrink-0" />
+                <MapPin size={15} className="text-red-500 shrink-0" />
                 <span>Pune Camp, Pune, Maharashtra 🇮🇳</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail size={15} className="text-blue-400 shrink-0" />
-                <a href="mailto:iinfynite0@gmail.com" className="hover:text-white transition-colors duration-200">iinfynite0@gmail.com</a>
+                <Mail size={15} className="text-blue-600 shrink-0" />
+                <a href="mailto:iinfynite0@gmail.com" className="hover:text-blue-600 transition-colors duration-200">iinfynite0@gmail.com</a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone size={15} className="text-emerald-400 shrink-0" />
-                <a href="tel:9588617714" className="hover:text-white transition-colors duration-200">+91 95886 17714</a>
+                <Phone size={15} className="text-emerald-600 shrink-0" />
+                <a href="tel:9588617714" className="hover:text-emerald-600 transition-colors duration-200">+91 95886 17714</a>
               </div>
 
               {/* Official Company Social Links */}
@@ -96,18 +96,18 @@ export function Footer() {
                   href="https://www.linkedin.com/company/113274914/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/[0.05] hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/40 text-xs font-semibold text-white/80 hover:text-white transition-all duration-200 group"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white hover:bg-slate-100 border border-slate-200 hover:border-slate-300 text-xs font-semibold text-slate-700 hover:text-slate-900 transition-all duration-200 shadow-xs group"
                 >
-                  <LinkedinIcon size={15} className="text-blue-400 group-hover:scale-110 transition-transform shrink-0" />
+                  <LinkedinIcon size={15} className="text-blue-600 group-hover:scale-110 transition-transform shrink-0" />
                   <span>LinkedIn Page</span>
                 </a>
                 <a
                   href="https://github.com/imuzax/iInfynite-Live"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/[0.05] hover:bg-white/10 border border-white/10 hover:border-white/25 text-xs font-semibold text-white/80 hover:text-white transition-all duration-200 group"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white hover:bg-slate-100 border border-slate-200 hover:border-slate-300 text-xs font-semibold text-slate-700 hover:text-slate-900 transition-all duration-200 shadow-xs group"
                 >
-                  <GithubIcon size={15} className="text-white/90 group-hover:scale-110 transition-transform shrink-0" />
+                  <GithubIcon size={15} className="text-slate-900 group-hover:scale-110 transition-transform shrink-0" />
                   <span>GitHub Repo</span>
                 </a>
               </div>
@@ -118,7 +118,7 @@ export function Footer() {
           {footerLinks.map((column) => (
             <div key={column.title} className="lg:col-span-1 flex flex-col">
               <h4
-                className="text-sm font-semibold text-white tracking-wide mb-5"
+                className="text-sm font-semibold text-slate-900 tracking-wide mb-5"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {column.title}
@@ -128,7 +128,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 hover:text-white transition-colors duration-200 block py-0.5 font-light"
+                      className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200 block py-0.5"
                     >
                       {link.label}
                     </Link>
@@ -139,28 +139,28 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom Copyright Bar - Standard Normal 56px Top Margin */}
-        <div className="mt-12 md:mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50">
+        {/* Bottom Copyright Bar */}
+        <div className="mt-12 md:mt-14 pt-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-center md:text-left">
             <span>© {new Date().getFullYear()} iINFYNITE. All rights reserved.</span>
-            <span className="hidden sm:inline text-white/20">•</span>
+            <span className="hidden sm:inline text-slate-300">•</span>
             <span>Engineered for Revenue Growth in Pune 🇮🇳</span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-5 text-white/70 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-5 text-slate-700 font-medium">
             <span className="flex items-center gap-1.5">
-              <ShieldCheck size={14} className="text-blue-400" /> 100% IP Ownership
+              <ShieldCheck size={14} className="text-blue-600" /> 100% IP Ownership
             </span>
-            <span className="text-white/20">•</span>
+            <span className="text-slate-300">•</span>
             <span className="flex items-center gap-1.5">
-              <Lock size={14} className="text-yellow-400" /> NDA Protected
+              <Lock size={14} className="text-amber-600" /> NDA Protected
             </span>
-            <span className="text-white/20">•</span>
+            <span className="text-slate-300">•</span>
             <a
               href="https://wa.me/919588617714"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors duration-200"
+              className="flex items-center gap-1.5 text-emerald-600 hover:text-emerald-700 font-semibold transition-colors duration-200"
             >
               <MessageSquare size={14} /> WhatsApp Support
             </a>

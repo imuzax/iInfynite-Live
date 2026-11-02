@@ -91,26 +91,26 @@ export default function ServicesPage() {
               const Icon = iconMap[service.icon] || Code2;
               return (
                 <FadeIn key={service.title} delay={index * 0.1}>
-                  <GlassCard className="h-full group">
+                  <GlassCard className="h-full group hover:border-blue-400">
                     <div className="flex items-start gap-5">
-                      <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                        <Icon size={28} className="text-accent" />
+                      <div className="w-14 h-14 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors shadow-xs">
+                        <Icon size={28} className="text-blue-600" />
                       </div>
                       <div className="flex-1">
                         <h3
-                          className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors"
+                          className="text-xl font-semibold mb-3 text-slate-900 group-hover:text-blue-600 transition-colors"
                           style={{ fontFamily: "var(--font-heading)" }}
                         >
                           {service.title}
                         </h3>
-                        <p className="text-muted text-sm leading-relaxed mb-4">
+                        <p className="text-slate-600 text-sm leading-relaxed mb-4">
                           {service.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {service.features.map((feature) => (
                             <span
                               key={feature}
-                              className="text-xs px-3 py-1 rounded-full border border-glass-border text-muted"
+                              className="text-xs px-3 py-1 rounded-full border border-slate-200 bg-slate-50 text-slate-600"
                             >
                               {feature}
                             </span>

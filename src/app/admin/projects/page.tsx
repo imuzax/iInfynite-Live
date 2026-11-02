@@ -116,7 +116,7 @@ export default function AdminProjectsPage() {
       {showForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="glass-card-static p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between mb-6 sticky top-0 bg-[#0a0a0a]/90 backdrop-blur pb-4 border-b border-white/10 z-10">
+            <div className="flex items-center justify-between mb-6 sticky top-0 bg-white/90 backdrop-blur pb-4 border-b border-slate-200 z-10">
               <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-heading)" }}>
                 {editingId ? "Edit Project" : "Add Project"}
               </h2>
@@ -233,7 +233,7 @@ export default function AdminProjectsPage() {
                 </div>
               </div>
               
-              <div className="pt-4 sticky bottom-0 bg-[#0a0a0a]/90 backdrop-blur border-t border-white/10 p-4 -mx-6 -mb-6 rounded-b-xl">
+              <div className="pt-4 sticky bottom-0 bg-white/90 backdrop-blur border-t border-slate-200 p-4 -mx-6 -mb-6 rounded-b-xl">
                 <button type="submit" disabled={isPending || isUploading} className="btn-primary w-full disabled:opacity-50">
                   {isPending ? "Saving..." : editingId ? "Update Project" : "Create Project"}
                 </button>

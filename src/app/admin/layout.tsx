@@ -55,24 +55,24 @@ export default function AdminLayout({
 
       {/* Sidebar */}
       <aside
-        className={`fixed md:static inset-y-0 left-0 z-40 w-64 admin-sidebar flex flex-col transition-transform duration-300 ${
+        className={`fixed md:static inset-y-0 left-0 z-40 w-64 bg-slate-50 border-r border-slate-200 flex flex-col transition-transform duration-300 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         }`}
       >
         {/* Logo */}
-        <div className="p-6 border-b border-glass-border">
+        <div className="p-6 border-b border-slate-200">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-bold text-sm">
               i
             </div>
             <span
-              className="text-lg font-bold"
+              className="text-lg font-bold text-slate-900"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               iInfynite
             </span>
           </Link>
-          <p className="text-xs text-muted mt-1">Admin Panel</p>
+          <p className="text-xs text-slate-500 mt-1">Admin Panel</p>
         </div>
 
         {/* Nav */}
@@ -86,8 +86,8 @@ export default function AdminLayout({
                 onClick={() => setSidebarOpen(false)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-accent/10 text-accent"
-                    : "text-muted hover:text-foreground hover:bg-glass-bg"
+                    ? "bg-slate-900 text-white"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                 }`}
               >
                 <link.icon size={18} />
@@ -98,11 +98,11 @@ export default function AdminLayout({
         </nav>
 
         {/* Logout */}
-        <div className="p-4 border-t border-glass-border">
+        <div className="p-4 border-t border-slate-200">
           <form action={logoutAction}>
             <button
               type="submit"
-              className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-muted hover:text-danger transition-colors w-full"
+              className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:text-red-600 transition-colors w-full cursor-pointer"
             >
               <LogOut size={18} />
               Sign Out

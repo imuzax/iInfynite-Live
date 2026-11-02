@@ -65,17 +65,17 @@ export default async function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((value, index) => (
               <FadeIn key={value.title} delay={index * 0.15}>
-                <GlassCard className="h-full text-center">
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                    <value.icon size={26} className="text-accent" />
+                <GlassCard className="h-full text-center hover:border-blue-400">
+                  <div className="w-14 h-14 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto mb-5 text-blue-600 shadow-xs">
+                    <value.icon size={26} className="text-blue-600" />
                   </div>
                   <h3
-                    className="text-xl font-semibold mb-3"
+                    className="text-xl font-semibold mb-3 text-slate-900"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {value.title}
                   </h3>
-                  <p className="text-muted text-sm leading-relaxed">
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     {value.description}
                   </p>
                 </GlassCard>
@@ -100,9 +100,9 @@ export default async function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {sortedTeam.map((member, index) => (
                 <FadeIn key={member.id} delay={index * 0.1} className="h-full">
-                  <GlassCard className="p-0 overflow-hidden h-full flex flex-col group border border-white/10 hover:border-white/20 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300">
+                  <GlassCard className="p-0 overflow-hidden h-full flex flex-col group border border-slate-200 hover:border-slate-300 bg-white shadow-sm hover:shadow-md transition-all duration-300">
                     {/* Uniform Photo Area */}
-                    <div className="w-full aspect-[4/3] bg-black/60 relative overflow-hidden border-b border-white/10 shrink-0">
+                    <div className="w-full aspect-[4/3] bg-slate-100 relative overflow-hidden border-b border-slate-200 shrink-0">
                       {member.photoUrl ? (
                         <img
                           src={member.photoUrl}
@@ -110,12 +110,12 @@ export default async function AboutPage() {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-6xl font-bold text-muted bg-white/5">
+                        <div className="w-full h-full flex items-center justify-center text-6xl font-bold text-slate-300 bg-slate-50">
                           {member.name.charAt(0)}
                         </div>
                       )}
                       {member.isFounder && (
-                        <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md border border-accent/40 text-accent text-[11px] font-bold tracking-widest uppercase shadow-xl">
+                        <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-900/90 backdrop-blur-md border border-slate-700 text-white text-[11px] font-bold tracking-widest uppercase shadow-md">
                           Founder & CEO
                         </div>
                       )}
@@ -124,34 +124,34 @@ export default async function AboutPage() {
                     {/* Content Area */}
                     <div className="p-6 md:p-7 flex flex-col flex-grow text-left">
                       <h3
-                        className="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-accent transition-colors"
+                        className="text-xl md:text-2xl font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors"
                         style={{ fontFamily: "var(--font-heading)" }}
                       >
                         {member.name}
                       </h3>
-                      <p className="text-accent text-sm font-semibold mb-4 tracking-wide">
+                      <p className="text-blue-600 text-sm font-semibold mb-4 tracking-wide">
                         {member.role}
                       </p>
 
                       {member.bio && (
-                        <p className="text-muted text-sm leading-relaxed mb-6 flex-grow font-light line-clamp-4">
+                        <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow font-normal line-clamp-4">
                           {member.bio}
                         </p>
                       )}
 
-                      <div className="pt-4 border-t border-white/10 mt-auto flex items-center justify-between gap-3 flex-wrap">
+                      <div className="pt-4 border-t border-slate-200 mt-auto flex items-center justify-between gap-3 flex-wrap">
                         {member.linkedin ? (
                           <a
                             href={member.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 hover:text-blue-400 transition-colors duration-200 group/btn"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-blue-600 transition-colors duration-200 group/btn"
                           >
-                            <LinkedinIcon size={15} className="text-blue-400 group-hover/btn:scale-110 transition-transform shrink-0" />
+                            <LinkedinIcon size={15} className="text-blue-600 group-hover/btn:scale-110 transition-transform shrink-0" />
                             <span>LinkedIn</span>
                           </a>
                         ) : (
-                          <span className="text-xs text-muted/40 font-light">iINFYNITE Team</span>
+                          <span className="text-xs text-slate-400 font-normal">iINFYNITE Team</span>
                         )}
 
                         {(member.github || member.isFounder) && (
@@ -159,9 +159,9 @@ export default async function AboutPage() {
                             href={member.github || "https://github.com/imuzax"}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 hover:text-white transition-colors duration-200 group/btn"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors duration-200 group/btn"
                           >
-                            <GithubIcon size={15} className="text-white/90 group-hover/btn:scale-110 transition-transform shrink-0" />
+                            <GithubIcon size={15} className="text-slate-800 group-hover/btn:scale-110 transition-transform shrink-0" />
                             <span>GitHub Profile</span>
                           </a>
                         )}

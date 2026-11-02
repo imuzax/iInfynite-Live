@@ -35,10 +35,10 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
                 activeCategory === cat
-                  ? "bg-accent text-black"
-                  : "bg-glass-bg border border-glass-border text-muted hover:text-foreground hover:border-glass-hover"
+                  ? "bg-slate-900 text-white shadow-sm"
+                  : "bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300"
               }`}
             >
               {cat}
@@ -52,8 +52,8 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
         {filtered.map((project, index) => (
           <FadeIn key={project.slug} delay={index * 0.1}>
             <Link href={`/projects/${project.slug}`}>
-              <GlassCard className="group cursor-pointer h-full flex flex-col">
-                <div className="h-48 rounded-xl bg-glass-bg border border-white/5 overflow-hidden mb-5 relative group-hover:border-white/10 transition-colors shrink-0">
+              <GlassCard className="group cursor-pointer h-full flex flex-col hover:border-blue-400">
+                <div className="h-48 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden mb-5 relative shrink-0">
                   {project.imageUrl && project.imageUrl !== "/placeholder.png" ? (
                     <img 
                       src={project.imageUrl} 
@@ -61,8 +61,8 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
-                      <span className="text-4xl font-bold text-foreground/20" style={{ fontFamily: "var(--font-heading)" }}>
+                    <div className="w-full h-full bg-slate-100 flex items-center justify-center">
+                      <span className="text-4xl font-bold text-slate-300" style={{ fontFamily: "var(--font-heading)" }}>
                         {project.title.charAt(0)}
                       </span>
                     </div>
@@ -72,16 +72,16 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
                   <span className="badge badge-new">{project.category}</span>
                 </div>
                 <h3
-                  className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors"
+                  className="text-lg font-semibold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {project.title}
                 </h3>
-                <p className="text-muted text-sm leading-relaxed mb-4 flex-grow">
+                <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                   {project.description}
                 </p>
-                <div className="flex items-center justify-between pt-3 border-t border-white/5 mt-auto">
-                  <div className="flex items-center gap-1 text-sm text-muted group-hover:text-accent transition-colors">
+                <div className="flex items-center justify-between pt-3 border-t border-slate-100 mt-auto">
+                  <div className="flex items-center gap-1 text-sm text-slate-500 group-hover:text-blue-600 transition-colors">
                     View Details
                     <ExternalLink size={14} />
                   </div>
@@ -91,7 +91,7 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="px-3 py-1.5 rounded-lg bg-accent text-black text-xs font-semibold hover:bg-accent/90 transition-all shadow-md shadow-accent/10 flex items-center gap-1.5 z-10"
+                      className="px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition-all shadow-sm flex items-center gap-1.5 z-10"
                     >
                       🚀 Live Site
                     </a>

@@ -49,7 +49,7 @@ export function Navbar() {
         <nav 
           className={`w-full max-w-5xl mx-4 px-6 flex items-center justify-between transition-all duration-300 ${
             isScrolled || mobileOpen
-              ? "py-3 bg-[#0a0a0a]/80 backdrop-blur-md border border-white/10 shadow-lg rounded-2xl" 
+              ? "py-3 bg-white/80 backdrop-blur-md border border-slate-200/80 shadow-sm rounded-2xl" 
               : "py-4 bg-transparent border-transparent rounded-2xl"
           }`}
         >
@@ -59,7 +59,7 @@ export function Navbar() {
               className="flex items-center group relative z-50"
               onClick={() => setMobileOpen(false)}
             >
-              <Logo className="h-7 md:h-8 w-auto text-white opacity-90 hover:opacity-100 transition-opacity" />
+              <Logo className="h-7 md:h-8 w-auto text-slate-900 opacity-95 hover:opacity-100 transition-opacity" />
             </Link>
 
             {/* Desktop Nav Links */}
@@ -68,10 +68,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-accent ${
+                  className={`text-sm font-medium transition-colors duration-200 ${
                     pathname === link.href
-                      ? "text-accent"
-                      : "text-muted"
+                      ? "text-blue-600 font-semibold"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   {link.label}
@@ -88,7 +88,7 @@ export function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden text-white p-2 relative z-50 transition-transform active:scale-95"
+              className="md:hidden text-slate-900 p-2 relative z-50 transition-transform active:scale-95"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -127,7 +127,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl md:hidden flex flex-col justify-center items-center h-[100dvh] overflow-hidden"
+            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-2xl md:hidden flex flex-col justify-center items-center h-[100dvh] overflow-hidden"
           >
             <div className="flex flex-col items-center gap-8 w-full px-6">
               {navLinks.map((link, i) => (
@@ -143,8 +143,8 @@ export function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className={`text-4xl sm:text-5xl font-bold tracking-tight transition-colors duration-300 relative group ${
                       pathname === link.href
-                        ? "text-accent"
-                        : "text-white/60 hover:text-white"
+                        ? "text-blue-600"
+                        : "text-slate-600 hover:text-slate-900"
                     }`}
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
@@ -152,7 +152,7 @@ export function Navbar() {
                     {pathname === link.href && (
                       <motion.div 
                         layoutId="mobile-nav-indicator"
-                        className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-accent rounded-full"
+                        className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-blue-600 rounded-full"
                       />
                     )}
                   </Link>
@@ -169,7 +169,7 @@ export function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="btn-primary text-lg px-10 py-4 rounded-full bg-white text-black"
+                  className="btn-primary text-lg px-10 py-4 rounded-full bg-slate-900 text-white"
                 >
                   Start a Project
                 </Link>
@@ -177,7 +177,7 @@ export function Navbar() {
             </div>
             
             {/* Ambient Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[60vh] bg-accent/5 rounded-full blur-[120px] pointer-events-none -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[60vh] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none -z-10" />
           </motion.div>
         )}
       </AnimatePresence>

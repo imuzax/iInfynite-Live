@@ -47,7 +47,7 @@ export default async function SolutionDetailPage(props: PageProps) {
         <FadeIn>
           <Link
             href="/solutions"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm text-white/50 hover:text-white transition-colors mb-8 md:mb-12"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm text-slate-500 hover:text-blue-600 transition-colors mb-8 md:mb-12"
           >
             <ArrowLeft size={16} />
             Back to 100+ Solutions Directory
@@ -58,20 +58,20 @@ export default async function SolutionDetailPage(props: PageProps) {
         <FadeIn delay={0.1}>
           <div className="mb-12 md:mb-16">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-xs font-semibold text-white">
+              <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-800">
                 {solution.category}
               </span>
-              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/5 text-xs text-white/60">
+              <span className="px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-xs text-slate-600">
                 Industry: {solution.industry}
               </span>
             </div>
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-tight max-w-4xl"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4 leading-tight max-w-4xl"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {solution.title}
             </h1>
-            <p className="text-base sm:text-xl text-white/70 max-w-3xl leading-relaxed font-light">
+            <p className="text-base sm:text-xl text-slate-600 max-w-3xl leading-relaxed font-normal">
               {solution.shortDescription}
             </p>
           </div>
@@ -83,12 +83,12 @@ export default async function SolutionDetailPage(props: PageProps) {
           <div className="lg:col-span-2 space-y-10 order-2 lg:order-1">
             {/* The Problem Box */}
             <FadeIn delay={0.2}>
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#110505] border border-red-500/20 relative overflow-hidden shadow-xl">
-                <div className="flex items-center gap-2 text-red-400 font-semibold mb-4 text-sm sm:text-base">
-                  <ShieldAlert size={20} className="text-red-500 shrink-0" />
+              <div className="p-6 sm:p-8 rounded-3xl bg-red-50/70 border border-red-200 relative overflow-hidden shadow-sm">
+                <div className="flex items-center gap-2 text-red-700 font-semibold mb-4 text-sm sm:text-base">
+                  <ShieldAlert size={20} className="text-red-600 shrink-0" />
                   The Business Bottleneck & Costly Problem
                 </div>
-                <p className="text-white/80 text-sm sm:text-base leading-relaxed">
+                <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
                   {solution.problem}
                 </p>
               </div>
@@ -96,12 +96,12 @@ export default async function SolutionDetailPage(props: PageProps) {
 
             {/* The iInfynite Solution Box */}
             <FadeIn delay={0.3}>
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#051109] border border-green-500/25 relative overflow-hidden shadow-xl">
-                <div className="flex items-center gap-2 text-green-400 font-semibold mb-4 text-sm sm:text-base">
-                  <Sparkles size={20} className="text-green-500 shrink-0" />
+              <div className="p-6 sm:p-8 rounded-3xl bg-emerald-50/70 border border-emerald-200 relative overflow-hidden shadow-sm">
+                <div className="flex items-center gap-2 text-emerald-700 font-semibold mb-4 text-sm sm:text-base">
+                  <Sparkles size={20} className="text-emerald-600 shrink-0" />
                   The Engineered Solution by iInfynite
                 </div>
-                <p className="text-white/90 text-sm sm:text-base leading-relaxed font-medium">
+                <p className="text-slate-800 text-sm sm:text-base leading-relaxed font-medium">
                   {solution.solution}
                 </p>
               </div>
@@ -109,24 +109,24 @@ export default async function SolutionDetailPage(props: PageProps) {
 
             {/* Key Features & Architecture Breakdown */}
             <FadeIn delay={0.4}>
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 shadow-xl">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
                 <h3
-                  className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2.5 border-b border-white/10 pb-4"
+                  className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2.5 border-b border-slate-100 pb-4"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  <Layers size={22} className="text-white/70" />
+                  <Layers size={22} className="text-slate-600" />
                   Core Features & Architecture Modules
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {solution.features.map((feature, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-3 p-4 rounded-2xl bg-[#111] border border-white/5 hover:border-white/15 transition-colors"
+                      className="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors"
                     >
-                      <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check size={14} className="text-white" />
+                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check size={14} className="text-blue-600" />
                       </div>
-                      <span className="text-sm font-medium text-white/80 leading-snug">
+                      <span className="text-sm font-medium text-slate-700 leading-snug">
                         {feature}
                       </span>
                     </div>
@@ -137,14 +137,14 @@ export default async function SolutionDetailPage(props: PageProps) {
 
             {/* Target Audience / Ideal Fit */}
             <FadeIn delay={0.5}>
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 shadow-xl flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Users size={24} className="text-white/70" />
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex items-start gap-5">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 text-blue-600">
+                  <Users size={24} className="text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-bold text-white mb-2">Ideal Business Fit</h4>
-                  <p className="text-sm text-white/60 leading-relaxed">
-                    Designed specifically for: <span className="text-white font-medium">{solution.targetAudience}</span>
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">Ideal Business Fit</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Designed specifically for: <span className="text-slate-900 font-medium">{solution.targetAudience}</span>
                   </p>
                 </div>
               </div>
@@ -155,11 +155,9 @@ export default async function SolutionDetailPage(props: PageProps) {
           <div className="lg:col-span-1 order-1 lg:order-2">
             <div className="sticky top-28 space-y-6">
               <FadeIn delay={0.3}>
-                <div className="p-6 sm:p-8 rounded-3xl bg-[#0a0a0a] border border-white/15 shadow-2xl relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-3xl pointer-events-none group-hover:bg-white/10 transition-colors" />
-
-                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white/50 mb-6">
-                    <Cpu size={16} className="text-white" />
+                <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-md relative overflow-hidden group">
+                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500 mb-6">
+                    <Cpu size={16} className="text-blue-600" />
                     Recommended Tech Stack
                   </div>
 
@@ -167,32 +165,32 @@ export default async function SolutionDetailPage(props: PageProps) {
                     {solution.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1.5 rounded-xl bg-[#151515] border border-white/10 text-xs font-medium text-white shadow-sm"
+                        className="px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-xs font-medium text-slate-700 shadow-2xs"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="space-y-4 pt-6 border-t border-white/10 text-xs text-white/60 mb-8">
+                  <div className="space-y-4 pt-6 border-t border-slate-100 text-xs text-slate-600 mb-8">
                     <div className="flex items-center justify-between">
                       <span>IP Ownership:</span>
-                      <span className="text-white font-semibold flex items-center gap-1"><CheckCircle2 size={14} className="text-green-400" /> 100% Client Owns</span>
+                      <span className="text-slate-900 font-semibold flex items-center gap-1"><CheckCircle2 size={14} className="text-emerald-600" /> 100% Client Owns</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span>Customization:</span>
-                      <span className="text-white font-semibold">Bespoke to your needs</span>
+                      <span className="text-slate-900 font-semibold">Bespoke to your needs</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span>NDA Protected:</span>
-                      <span className="text-white font-semibold">Yes, Guaranteed</span>
+                      <span className="text-slate-900 font-semibold">Yes, Guaranteed</span>
                     </div>
                   </div>
 
                   <div className="space-y-3">
                     <Link
                       href={`/contact?solution=${encodeURIComponent(solution.title)}`}
-                      className="btn-primary w-full py-4 rounded-xl bg-white text-black font-semibold text-center block text-sm shadow-xl hover:bg-white/90"
+                      className="btn-primary w-full py-4 rounded-xl bg-slate-900 text-white font-semibold text-center block text-sm shadow-md hover:bg-slate-800"
                     >
                       Book Free Consultation
                     </Link>
@@ -200,7 +198,7 @@ export default async function SolutionDetailPage(props: PageProps) {
                       href={`https://wa.me/919588617714?text=Hi%2C%20I%20am%20interested%20in%20building%20the%20%2A${encodeURIComponent(solution.title)}%2A%20solution.%20Let's%20discuss%21`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 rounded-xl bg-[#111] hover:bg-[#181818] border border-white/10 text-white font-medium text-center flex items-center justify-center gap-2 text-xs transition-colors"
+                      className="w-full py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-medium text-center flex items-center justify-center gap-2 text-xs transition-colors"
                     >
                       Discuss on WhatsApp <ArrowRight size={14} />
                     </a>
@@ -210,11 +208,11 @@ export default async function SolutionDetailPage(props: PageProps) {
 
               {/* Quick trust box */}
               <FadeIn delay={0.4}>
-                <div className="p-6 rounded-2xl bg-[#080808] border border-white/5 text-center">
-                  <div className="text-xs text-white/50 leading-relaxed">
+                <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+                  <div className="text-xs text-slate-600 leading-relaxed">
                     &ldquo;Clients don&apos;t care about jargon; they care about business growth. We build scalable software engineered to solve your exact operational challenges.&rdquo;
                   </div>
-                  <div className="mt-3 text-xs font-semibold text-white/80">— iInfynite Engineering Team</div>
+                  <div className="mt-3 text-xs font-semibold text-slate-800">— iInfynite Engineering Team</div>
                 </div>
               </FadeIn>
             </div>
@@ -223,27 +221,27 @@ export default async function SolutionDetailPage(props: PageProps) {
 
         {/* Bottom Call to Action */}
         <FadeIn delay={0.6}>
-          <div className="mt-20 p-8 sm:p-14 rounded-3xl bg-gradient-to-b from-[#111] to-[#0a0a0a] border border-white/15 text-center relative overflow-hidden shadow-2xl">
+          <div className="mt-20 p-8 sm:p-14 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 text-center relative overflow-hidden shadow-2xl text-white">
             <div className="max-w-2xl mx-auto relative z-10">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs text-white mb-4">
-                <Zap size={14} className="text-yellow-400" /> Rapid Prototype & Launch
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200 mb-4 border border-white/10">
+                <Zap size={14} className="text-amber-400" /> Rapid Prototype & Launch
               </div>
               <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-heading)" }}>
                 Ready to Implement {solution.title}?
               </h2>
-              <p className="text-sm sm:text-base text-white/60 mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-300 mb-8 leading-relaxed">
                 We customize this exact architecture for your business workflow, integrate your existing tools, and deploy to secure cloud infrastructure with dedicated support.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href={`/contact?solution=${encodeURIComponent(solution.title)}`}
-                  className="btn-primary text-sm px-8 py-3.5 rounded-full bg-white text-black font-semibold w-full sm:w-auto"
+                  className="btn-primary text-sm px-8 py-3.5 rounded-full bg-white text-slate-950 hover:bg-slate-100 font-semibold w-full sm:w-auto shadow-md"
                 >
                   Schedule Technical Call
                 </Link>
                 <Link
                   href="/solutions"
-                  className="btn-secondary text-sm px-8 py-3.5 rounded-full w-full sm:w-auto"
+                  className="btn-secondary text-sm px-8 py-3.5 rounded-full w-full sm:w-auto bg-slate-800 border-slate-700 text-white hover:bg-slate-700"
                 >
                   Explore Other Solutions
                 </Link>
